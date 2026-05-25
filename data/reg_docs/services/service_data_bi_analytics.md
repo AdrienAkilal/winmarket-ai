@@ -16,7 +16,7 @@ Un projet BI démarre par un cadrage des objectifs de pilotage, l'identification
 Nous insistons sur la définition des KPI avant le développement : formule, périmètre, exclusions, rafraîchissement, propriétaire métier, propriétaire technique, seuils d'alerte et historique. Cette gouvernance réduit les divergences entre directions et permet d'éviter les tableaux de bord non utilisés.
 
 ## Équipe mobilisable
-4 data analysts, 3 data engineers, 2 consultants BI seniors, 1 architecte data et 1 chef de projet peuvent être mobilisés. La capacité actuelle permet d'absorber deux projets BI moyens en parallèle ou un projet data platform plus structurant.
+3 data engineers, 2 data analysts BI, 2 consultants IA/RAG et 1 architecte data peuvent être mobilisés, en coordination avec les chefs de projet du pôle Delivery. La capacité actuelle permet d'absorber deux projets BI moyens en parallèle ou un projet data platform plus structurant.
 
 ## Limites
 Nous ne sommes pas intégrateur ERP lourd et nous ne prenons pas en charge, en phase MVP, les refontes complètes de systèmes comptables ou les migrations massives SAP. Les projets nécessitant une certification HDS ou une donnée de santé nominative doivent faire l'objet d'une analyse sécurité séparée.

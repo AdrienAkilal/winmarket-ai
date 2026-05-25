@@ -17,10 +17,10 @@ Budget : 85 000 €
 Durée : 3 mois
 
 ## Organisation projet
-Équipe moyenne de 5 à 8 personnes selon les phases : chef de projet, architecte, développeurs, QA, UX/UI et expert métier. Rituels hebdomadaires, démonstrations régulières, backlog priorisé et recette progressive.
+Équipe de 3 personnes : consultant BI senior, data engineer et chef de projet. Phase de cadrage de 2 semaines pour formaliser le dictionnaire d'indicateurs avec la direction commerciale et la DAF. Développement en 2 itérations : premier périmètre CA et conversion validé rapidement, puis extension au portefeuille et aux alertes. Formation des utilisateurs finaux incluse.
 
 ## Enseignements réutilisables
-Cette référence est pertinente pour les appels d'offres demandant une application métier, un portail web, un socle data ou une solution IA documentaire. Les facteurs clés de succès ont été la clarté du périmètre MVP, la disponibilité des référents métiers et l'accès anticipé aux environnements techniques.
+Cette référence est directement pertinente pour les AOs portant sur un tableau de bord de pilotage, un cockpit de direction, un reporting commercial automatisé ou une migration d'un outil Excel vers Power BI. Elle atteste de la maîtrise du modèle en étoile, du dictionnaire d'indicateurs, de SQL Server et de Power BI en environnement décisionnel. Elle est valorisable pour les AOs dans les secteurs distribution, services B2B et industries.
 
 ## Limites de comparaison
-La référence ne couvre pas les exigences SecNumCloud portées par le titulaire, les projets SAP lourds, ni les projets nécessitant une présence sur site permanente.
+Cette référence ne couvre pas les data warehouses à très fort volume (>100M lignes), les projets de data lake, les besoins temps réel ou les plateformes BI couplées à un moteur d'IA prédictive.

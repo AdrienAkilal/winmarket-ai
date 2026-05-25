@@ -17,10 +17,10 @@ Budget : 145 000 €
 Durée : 5 mois
 
 ## Organisation projet
-Équipe moyenne de 5 à 8 personnes selon les phases : chef de projet, architecte, développeurs, QA, UX/UI et expert métier. Rituels hebdomadaires, démonstrations régulières, backlog priorisé et recette progressive.
+Équipe de 4 personnes : chef de projet, 2 consultants IA/RAG (architecture et développement), 1 développeur back-end FastAPI. L'UX est intervenu ponctuellement pour l'interface de recherche. Méthode itérative : POC en 4 semaines, puis itérations sur la qualité du chunking, du reranking et des prompts de génération. Validation humaine intégrée dès le début : les juristes validaient les synthèses avant que le système ne soit étendu.
 
 ## Enseignements réutilisables
-Cette référence est pertinente pour les appels d'offres demandant une application métier, un portail web, un socle data ou une solution IA documentaire. Les facteurs clés de succès ont été la clarté du périmètre MVP, la disponibilité des référents métiers et l'accès anticipé aux environnements techniques.
+Cette référence est directement pertinente pour tout AO demandant un assistant documentaire IA, un moteur de recherche sémantique ou une solution RAG sur corpus interne. Elle atteste de la maîtrise de l'ensemble de la chaîne RAG (ingestion, chunking, vectorisation, reranking, génération contrôlée) sur des documents longs et juridico-techniques. Elle est valorisable pour les secteurs assurance, finance, juridique, RH et secteur public disposant de gros volumes documentaires.
 
 ## Limites de comparaison
-La référence ne couvre pas les exigences SecNumCloud portées par le titulaire, les projets SAP lourds, ni les projets nécessitant une présence sur site permanente.
+Cette référence ne couvre pas les modèles d'IA fine-tunés sur corpus propriétaire, les solutions nécessitant un hébergement souverain SecNumCloud, ni les pipelines en temps réel sur flux de données structurées.

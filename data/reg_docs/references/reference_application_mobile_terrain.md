@@ -17,10 +17,10 @@ Budget : 220 000 €
 Durée : 7 mois
 
 ## Organisation projet
-Équipe moyenne de 5 à 8 personnes selon les phases : chef de projet, architecte, développeurs, QA, UX/UI et expert métier. Rituels hebdomadaires, démonstrations régulières, backlog priorisé et recette progressive.
+Équipe de 4 personnes en phase développement : chef de projet, développeur React Native senior, développeur back-end API, QA mobile. L'UX designer est intervenu en amont pour les maquettes et les tests utilisateurs terrain. Sprints de 2 semaines, démonstrations sur device réel, recette terrain avec un groupe pilote de 10 techniciens avant déploiement généralisé.
 
 ## Enseignements réutilisables
-Cette référence est pertinente pour les appels d'offres demandant une application métier, un portail web, un socle data ou une solution IA documentaire. Les facteurs clés de succès ont été la clarté du périmètre MVP, la disponibilité des référents métiers et l'accès anticipé aux environnements techniques.
+Cette référence est directement pertinente pour les AOs demandant une application terrain avec mode offline et synchronisation (techniciens, inspecteurs, agents terrain). Elle atteste de la maîtrise de React Native, de la gestion des conflits de synchronisation et du processus de publication App Store / Google Play. Elle est également valorisable pour les projets couplant une application mobile à un back-office web d'administration.
 
 ## Limites de comparaison
-La référence ne couvre pas les exigences SecNumCloud portées par le titulaire, les projets SAP lourds, ni les projets nécessitant une présence sur site permanente.
+Cette référence ne couvre pas les intégrations matérielles spécifiques (scanners industriels, équipements IoT), les environnements réglementés HDS ou SecNumCloud, ni les applications mobiles grand public à fort volume d'utilisateurs.

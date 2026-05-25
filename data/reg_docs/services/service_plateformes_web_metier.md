@@ -1,7 +1,7 @@
 # Service - Conception et développement de plateformes web métiers
 
 ## Positionnement du service
-NovaSoft Conseil est une ESN éditrice de logiciels spécialisée dans la conception, le développement et la maintenance de plateformes web métiers critiques. Ce service couvre les portails clients, extranets partenaires, intranets opérationnels, applications de gestion interne, plateformes SaaS B2B et outils de pilotage destinés aux directions métiers. L'objectif est de transformer un processus métier complexe en application web robuste, maintenable, sécurisée et industrialisable.
+NovaSoft Conseil est une ESN française indépendante spécialisée dans la conception, le développement et la maintenance de plateformes web métiers critiques. Ce service couvre les portails clients, extranets partenaires, intranets opérationnels, applications de gestion interne, plateformes SaaS B2B et outils de pilotage destinés aux directions métiers. L'objectif est de transformer un processus métier complexe en application web robuste, maintenable, sécurisée et industrialisable.
 
 ## Périmètre fonctionnel couvert
 Nous intervenons sur l'ensemble du cycle de vie projet : cadrage du besoin, ateliers métiers, conception UX/UI, rédaction des spécifications fonctionnelles et techniques, architecture applicative, développement front-end et back-end, intégration avec le SI existant, recette, formation, mise en production et maintenance évolutive. Les projets typiques concernent la dématérialisation de parcours, la centralisation de données opérationnelles, la gestion d'un workflow métier, le suivi de dossiers, la création de tableaux de bord ou la mise à disposition d'un espace sécurisé pour des clients ou partenaires.

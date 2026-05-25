@@ -17,10 +17,10 @@ Budget : 155 000 €
 Durée : 5 mois
 
 ## Organisation projet
-Équipe moyenne de 5 à 8 personnes selon les phases : chef de projet, architecte, développeurs, QA, UX/UI et expert métier. Rituels hebdomadaires, démonstrations régulières, backlog priorisé et recette progressive.
+Équipe de 5 personnes : chef de projet, UX researcher, développeur Vue.js, développeur Java back-end, QA. Ateliers utilisateurs menés en amont pour cartographier les usages réels de l'ancien intranet. Approche agile avec sprints de 2 semaines et recette progressive par département RH. La phase UX research a été décisive : elle a permis de réduire de 40 % le périmètre initial en supprimant des fonctionnalités non utilisées.
 
 ## Enseignements réutilisables
-Cette référence est pertinente pour les appels d'offres demandant une application métier, un portail web, un socle data ou une solution IA documentaire. Les facteurs clés de succès ont été la clarté du périmètre MVP, la disponibilité des référents métiers et l'accès anticipé aux environnements techniques.
+Cette référence est pertinente pour les AOs portant sur une refonte d'intranet, un portail collaboratif interne, une base documentaire ou un outil de gestion RH. Elle atteste de la capacité à mener des ateliers utilisateurs, à conduire une approche centrée usage et à livrer un produit adopté (et non seulement installé). Elle est valorisable pour les AOs dans les secteurs industrie, services et organisations de taille intermédiaire.
 
 ## Limites de comparaison
-La référence ne couvre pas les exigences SecNumCloud portées par le titulaire, les projets SAP lourds, ni les projets nécessitant une présence sur site permanente.
+Cette référence ne couvre pas les projets nécessitant une intégration ERP RH lourde (SAP HCM, Workday), les portails multi-entités à gouvernance complexe, ni les projets avec exigences de sécurité renforcée (SecNumCloud, HDS).

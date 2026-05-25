@@ -17,10 +17,10 @@ Budget : 95 000 €
 Durée : 4 mois
 
 ## Organisation projet
-Équipe moyenne de 5 à 8 personnes selon les phases : chef de projet, architecte, développeurs, QA, UX/UI et expert métier. Rituels hebdomadaires, démonstrations régulières, backlog priorisé et recette progressive.
+Équipe de 3 personnes : data analyst senior, data engineer et chef de projet. Ateliers de cadrage avec les équipes marketing et sales pour définir les critères de scoring. Livraisons en 3 itérations de 3 semaines : premier modèle basé sur les règles métier, puis enrichissement des données CRM, puis tableau de bord Power BI et documentation des critères.
 
 ## Enseignements réutilisables
-Cette référence est pertinente pour les appels d'offres demandant une application métier, un portail web, un socle data ou une solution IA documentaire. Les facteurs clés de succès ont été la clarté du périmètre MVP, la disponibilité des référents métiers et l'accès anticipé aux environnements techniques.
+Cette référence est pertinente pour les AOs portant sur du scoring métier, de la segmentation client, du reporting commercial ou de l'aide à la décision par les données. Elle atteste de la capacité à traduire des règles métier en modèle de scoring opérationnel, à connecter des sources CRM/ERP et à produire une restitution Power BI utilisable par des équipes non techniques. Elle est valorisable pour les AOs dans les secteurs services financiers, assurance, distribution B2B.
 
 ## Limites de comparaison
-La référence ne couvre pas les exigences SecNumCloud portées par le titulaire, les projets SAP lourds, ni les projets nécessitant une présence sur site permanente.
+Cette référence ne couvre pas le machine learning supervisé sur gros volumes, les projets de data science avancée nécessitant des GPU, ni les plateformes de données temps réel avec streaming.

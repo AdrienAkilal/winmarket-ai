@@ -17,10 +17,10 @@ Budget : 260 000 €
 Durée : 6 mois
 
 ## Organisation projet
-Équipe moyenne de 5 à 8 personnes selon les phases : chef de projet, architecte, développeurs, QA, UX/UI et expert métier. Rituels hebdomadaires, démonstrations régulières, backlog priorisé et recette progressive.
+Équipe de 3 personnes : architecte cloud, ingénieur DevOps senior et chef de projet. Intervention par phases : audit de l'existant (2 semaines), conteneurisation et pipeline CI/CD (6 semaines), migration des environnements de recette puis production (4 semaines), stabilisation et documentation (2 semaines). Les développeurs de l'éditeur ont été intégrés aux revues d'architecture pour garantir la continuité du service.
 
 ## Enseignements réutilisables
-Cette référence est pertinente pour les appels d'offres demandant une application métier, un portail web, un socle data ou une solution IA documentaire. Les facteurs clés de succès ont été la clarté du périmètre MVP, la disponibilité des référents métiers et l'accès anticipé aux environnements techniques.
+Cette référence est directement pertinente pour les AOs portant sur une migration cloud, une conteneurisation d'application existante, la mise en place d'un pipeline CI/CD ou l'industrialisation d'une infrastructure. Elle atteste de la maîtrise de Docker, Kubernetes, Terraform, Azure et GitLab CI en contexte de migration avec contrainte de continuité de service. Elle est valorisable pour les AOs DevOps, cloud migration et modernisation applicative.
 
 ## Limites de comparaison
-La référence ne couvre pas les exigences SecNumCloud portées par le titulaire, les projets SAP lourds, ni les projets nécessitant une présence sur site permanente.
+Cette référence ne couvre pas les projets nécessitant une qualification SecNumCloud portée par le prestataire principal, les migrations ERP ou SAP, ni les infogérances de production 24h/24 avec astreinte.

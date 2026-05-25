@@ -17,10 +17,10 @@ Budget : 310 000 €
 Durée : 8 mois
 
 ## Organisation projet
-Équipe moyenne de 5 à 8 personnes selon les phases : chef de projet, architecte, développeurs, QA, UX/UI et expert métier. Rituels hebdomadaires, démonstrations régulières, backlog priorisé et recette progressive.
+Équipe de 6 personnes en phase de développement : chef de projet, architecte solution, 2 développeurs full-stack, QA et UX designer. Cycle agile en sprints de 2 semaines avec démonstrations au référent métier du client. Recette métier progressive : les courtiers pilotes ont validé les fonctionnalités sprint par sprint avant déploiement.
 
 ## Enseignements réutilisables
-Cette référence est pertinente pour les appels d'offres demandant une application métier, un portail web, un socle data ou une solution IA documentaire. Les facteurs clés de succès ont été la clarté du périmètre MVP, la disponibilité des référents métiers et l'accès anticipé aux environnements techniques.
+Cette référence est directement pertinente pour les AOs portant sur un extranet partenaires, un portail courtiers, un espace client sécurisé ou un portail B2B avec workflow de validation. Elle atteste de l'expertise NovaSoft sur les architectures React + Spring Boot, l'intégration SSO, les workflows d'approbation et les projets dans le secteur assurance. Elle est valorisable face à des donneurs d'ordre assurance, mutuelle ou services financiers.
 
 ## Limites de comparaison
-La référence ne couvre pas les exigences SecNumCloud portées par le titulaire, les projets SAP lourds, ni les projets nécessitant une présence sur site permanente.
+Cette référence ne couvre pas les cœurs de système de gestion (progiciels assurance, CRM éditeur), les projets nécessitant SecNumCloud ou HDS, ni les portails à très fort volume transactionnel avec SLA temps réel.

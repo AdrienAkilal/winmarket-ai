@@ -17,10 +17,10 @@ Budget : 180 000 €
 Durée : 5 mois
 
 ## Organisation projet
-Équipe moyenne de 5 à 8 personnes selon les phases : chef de projet, architecte, développeurs, QA, UX/UI et expert métier. Rituels hebdomadaires, démonstrations régulières, backlog priorisé et recette progressive.
+Équipe de 5 personnes : chef de projet, développeur Angular senior, développeur .NET back-end, QA et un consultant externe spécialisé Qualiopi pour la validation des exports réglementaires. Sprints de 2 semaines avec démonstrations au responsable pédagogique et à la directrice administrative. La mise en conformité des exports Qualiopi a nécessité 3 itérations de validation avec l'équipe qualité du client.
 
 ## Enseignements réutilisables
-Cette référence est pertinente pour les appels d'offres demandant une application métier, un portail web, un socle data ou une solution IA documentaire. Les facteurs clés de succès ont été la clarté du périmètre MVP, la disponibilité des référents métiers et l'accès anticipé aux environnements techniques.
+Cette référence est directement pertinente pour les AOs portant sur une plateforme de gestion de la formation (LMS, TMS), un outil de suivi des apprenants ou un système d'exports réglementaires. Elle atteste de la maîtrise des contraintes Qualiopi, de la gestion des profils multi-niveaux (apprenant, formateur, gestionnaire, direction) et de la production d'exports conformes aux exigences des organismes de contrôle. Elle est valorisable pour les organismes de formation, les OPCO et les services formation des grandes entreprises.
 
 ## Limites de comparaison
-La référence ne couvre pas les exigences SecNumCloud portées par le titulaire, les projets SAP lourds, ni les projets nécessitant une présence sur site permanente.
+Cette référence ne couvre pas les plateformes e-learning à fort contenu vidéo, les MOOC ouverts au grand public, ni les projets nécessitant une intégration profonde avec un ERP de gestion (SAP, Cegid) ou un LMS éditeur existant (Moodle enterprise, Cornerstone).
