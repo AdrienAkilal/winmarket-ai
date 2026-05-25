@@ -1,0 +1,313 @@
+APPEL D'OFFRES OUVERT
+Procédure adaptée — Article L2123-1 du Code de la commande publique
+(Marché privé — procédure volontairement formalisée)
+
+═══════════════════════════════════════════════════════════════════
+GROUPE PRÉVOYANCE ALLIANCE
+Direction de la Transformation Digitale
+═══════════════════════════════════════════════════════════════════
+
+OBJET DU MARCHÉ
+───────────────
+Conception, développement et déploiement d'un portail web intelligent
+de gestion des souscriptions, de suivi des contrats de prévoyance
+collective et d'assistance documentaire augmentée par l'Intelligence
+Artificielle pour le réseau commercial de Groupe Prévoyance Alliance.
+
+Référence marché : GPA-DTD-2025-012
+Date de publication : 3 avril 2025
+Date limite de remise des offres : 23 mai 2025 à 17h00
+Date prévisionnelle de démarrage : 1er septembre 2025
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. IDENTIFICATION DU DONNEUR D'ORDRE
+─────────────────────────────────────
+Groupe Prévoyance Alliance S.A.
+14 avenue de Wagram — 75008 Paris
+SIRET : 412 387 965 00042
+Représentée par sa Directrice de la Transformation Digitale, Mme Sophie Renard
+
+Contact marché : appels-offres@prevoyance-alliance.fr
+Téléphone : +33 (0)1 44 15 82 00
+Plateforme de dépôt : portail fournisseurs GPA (accès sur inscription)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2. CONTEXTE ET ENJEUX
+──────────────────────
+Groupe Prévoyance Alliance est un acteur de référence de la prévoyance
+collective en France, avec 420 000 contrats actifs, 18 000 entreprises
+clientes (TPE, PME et grands comptes) et un réseau de 340 agents
+commerciaux répartis sur 28 agences régionales.
+
+Aujourd'hui, la gestion des contrats repose sur un progiciel central
+vieillissant (PrévoSoft v4, déployé en 2014) et une multitude d'outils
+bureautiques non interconnectés (Excel, SharePoint, emails). Ce dispositif
+génère des frictions significatives :
+
+  • Délai moyen de souscription : 11 jours ouvrés (objectif : ≤ 3 jours)
+  • Taux d'erreur en saisie des avenants : 14 % (source : audit interne 2024)
+  • Temps consacré à la recherche documentaire : 35 % du temps agent
+  • Absence d'outil de pilotage commercial unifié pour les managers
+
+Face à ces constats, Groupe Prévoyance Alliance souhaite déployer un
+portail web de nouvelle génération intégrant des briques d'Intelligence
+Artificielle pour automatiser, fiabiliser et accélérer l'ensemble du cycle
+de vie des contrats de prévoyance collective.
+
+Le budget global alloué à ce projet est de 370 000 € HT sur 20 mois,
+réparti comme suit :
+  — Phase 1 — Portail socle + souscription assistée (10 mois) : 210 000 € HT
+  — Phase 2 — Modules IA + pilotage commercial (10 mois) : 160 000 € HT
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. PÉRIMÈTRE FONCTIONNEL DÉTAILLÉ
+────────────────────────────────────
+
+3.1 Module Souscription Assistée
+Le portail devra permettre aux agents commerciaux de créer, compléter
+et soumettre une demande de souscription entièrement en ligne :
+
+  a) Formulaire dynamique intelligent
+     — Adaptation automatique des champs selon le profil entreprise cliente
+       (effectif, secteur NAF, catégorie de garanties souhaitées)
+     — Pré-remplissage des données entreprise via API SIRENE (INSEE)
+     — Calcul de la prime estimée en temps réel avec explication des paramètres
+     — Génération automatique du projet de contrat PDF dès validation
+
+  b) Collecte et vérification documentaire
+     — Dépôt de pièces justificatives (Kbis, RIB, DADS, bulletins de paie)
+     — OCR et extraction automatique des données clés par LLM
+       (raison sociale, SIRET, effectif, masse salariale, convention collective)
+     — Contrôle de cohérence des données extraites vs formulaire saisi
+     — Alertes automatiques en cas d'incohérence détectée
+
+  c) Workflow de validation multi-niveaux
+     — Validation agent → soumission underwriting → accord direction technique
+     — Notifications email et in-app à chaque étape
+     — Délai de traitement affiché en temps réel avec engagement de réponse SLA
+     — Archivage automatique des échanges et versions successives du dossier
+
+3.2 Module Gestion et Suivi des Contrats
+  — Tableau de bord agent : portefeuille complet, alertes d'échéance, KPIs
+  — Consultation et téléchargement de l'ensemble des pièces contractuelles
+  — Gestion des avenants : modifications d'effectif, de garanties, de bénéficiaires
+  — Historique complet des échanges et des modifications avec horodatage
+  — Export des données au format CSV / Excel pour les reportings RH client
+
+3.3 Module Assistant IA Documentaire (RAG)
+Il s'agit du cœur différenciant de la solution. Le titulaire développera
+un assistant conversationnel en langage naturel permettant aux agents de :
+
+  a) Interroger la base documentaire de GPA
+     — Convention collective applicable à un secteur NAF donné
+     — Garanties couvertes par un type de contrat spécifique
+     — Procédures internes de gestion des cas particuliers (invalidité,
+       prévoyance lourde, portabilité)
+     — Réglementation en vigueur (ANI 2013, loi Évin, accord de branche)
+
+  b) Générer des livrables commerciaux
+     — Proposition commerciale personnalisée en 1 clic (format DOCX / PDF)
+     — Fiche de synthèse garanties adaptée au prospect
+     — Mail de relance commercial pré-rédigé et contextualisé
+     — Comparatif produits GPA vs offre concurrente (sur base fournie)
+
+  c) Caractéristiques techniques du moteur RAG
+     — Base documentaire : 2 400 documents (notices, contrats-types, circulaires,
+       fiches produits, guides réglementaires) à indexer dès la phase 1
+     — Mise à jour de la base documentaire : interface d'administration simplifiée
+     — Modèle LLM : GPT-4o, Claude 3.5 Sonnet ou équivalent accessible via API
+     — Mémoire conversationnelle : contexte conservé sur 10 tours de dialogue
+     — Traçabilité : chaque réponse citée avec la source documentaire précise
+     — Langue : français exclusivement
+
+3.4 Module Pilotage Commercial (Managers)
+  — Tableau de bord régional : taux de souscription, délais, taux d'erreur
+  — Alertes automatiques sur contrats à risque (impayés, résiliations proches)
+  — Rapports mensuels auto-générés exportables (PDF + PowerPoint)
+  — Vue nationale consolidée pour la direction commerciale
+  — Accès contrôlé par région et par niveau hiérarchique (RBAC)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4. EXIGENCES TECHNIQUES ET CONTRAINTES
+────────────────────────────────────────
+
+4.1 Architecture cible
+  — Application web monopage (SPA) : React 18+ ou Angular 17+
+  — Backend API REST : Python (FastAPI ou Django REST Framework)
+  — Base de données principale : PostgreSQL 15+ avec chiffrement at-rest
+  — Base vectorielle pour RAG : ChromaDB, Qdrant ou équivalent
+  — Hébergement : Microsoft Azure (région France Centre — Paris)
+  — Orchestration : Docker + Kubernetes (AKS) pour les composants IA
+  — CI/CD : pipeline GitLab ou GitHub Actions avec déploiement automatisé
+    sur environnements de développement, recette et production
+  — Supervision : stack Grafana + Prometheus, alertes PagerDuty
+
+4.2 Sécurité et conformité
+  — Authentification SSO via Azure Active Directory (SAML 2.0 / OpenID Connect)
+    intégré au tenant GPA existant
+  — Gestion des habilitations par rôle (agent, manager, underwriter, admin)
+  — Chiffrement des données en transit (TLS 1.3) et au repos (AES-256)
+  — Journalisation complète des accès et actions (audit trail RGPD)
+  — RGPD : conformité by design — registre de traitement, durées de
+    conservation configurables, procédure de droit à l'oubli automatisée
+  — Tests de pénétration (pentest) à la livraison Phase 1 et Phase 2,
+    conduits par un prestataire tiers homologué
+
+4.3 Performances et disponibilité
+  — Temps de chargement des pages : < 2 secondes (P95, réseau ADSL standard)
+  — Temps de réponse de l'assistant IA : < 5 secondes (P90)
+  — Disponibilité : 99,5 % hors maintenance programmée (SLA contractuel)
+  — PRA : RPO ≤ 2h, RTO ≤ 4h
+  — Capacité : 340 utilisateurs simultanés en heure de pointe
+
+4.4 Intégrations systèmes existants
+  — PrévoSoft v4 : synchronisation bidirectionnelle via API REST (fournie
+    par l'éditeur — documentation disponible à la signature du NDA)
+  — API SIRENE INSEE : pré-remplissage données entreprise
+  — Microsoft 365 : intégration Outlook (envoi notifications) et Teams
+    (canal de suivi dossiers)
+  — Docusign : signature électronique des contrats et avenants
+
+4.5 Certifications et conformité requises
+  ✦ RGPD — conformité by design OBLIGATOIRE (analyse d'impact AIPD attendue)
+  ✦ Pratiques sécurité alignées ISO 27001 souhaitées (certification non requise)
+    — Le candidat devra fournir sa politique sécurité interne et son plan
+      d'assurance qualité sécurité (PASSI n'est pas exigé)
+  ✦ RGAA 4.1 niveau AA pour les interfaces publiques (portail client futur)
+
+  Note : aucune exigence SecNumCloud, HDS ou NF Z 42-013 pour ce marché.
+  Les données traitées sont des données personnelles standard (contrats
+  de prévoyance collective), hors données de santé nominatives.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. PROFIL DU TITULAIRE ET RÉFÉRENCES ATTENDUES
+────────────────────────────────────────────────
+
+5.1 Compétences techniques attendues
+  — Maîtrise démontrée de React (ou Angular) et Python/FastAPI en production
+  — Expérience RAG documentaire : vectorisation, retrieval, génération LLM
+  — Compétence Azure / Kubernetes / CI-CD
+  — Connaissance des standards d'intégration SSO (SAML, OpenID Connect)
+  — Sensibilité produit / UX : parcours utilisateur, design system, accessibilité
+
+5.2 Références exigées
+  — Au moins 2 références de projets livrés au cours des 4 dernières années
+    sur des plateformes web métier à destination de réseaux commerciaux
+    ou de portails partenaires/client
+  — Au moins 1 référence intégrant un composant IA, RAG ou traitement
+    de documents automatisé
+  — Les fiches de référence doivent mentionner : client, budget, périmètre
+    technique, résultats mesurables obtenus
+
+5.3 Équipe projet minimale attendue
+  — 1 Chef de projet / Delivery Manager (profil senior, ≥ 5 ans)
+  — 2 développeurs full-stack (React + Python/FastAPI, profils confirmés)
+  — 1 consultant IA / RAG spécialisé LLM et vectorisation documentaire
+  — 1 ingénieur DevOps (Azure, Kubernetes, CI/CD)
+  — 1 UX Designer (au moins à mi-temps en Phase 1)
+  — 1 QA Engineer (recette fonctionnelle et tests de performance)
+
+5.4 Capacité financière
+  — Chiffre d'affaires annuel ≥ 1 M€ sur les 2 derniers exercices
+  — Le groupement d'entreprises est autorisé
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6. JALONS ET PLANNING PRÉVISIONNEL
+────────────────────────────────────
+  J0      — Notification du marché (1er septembre 2025)
+  J+30    — Kick-off projet, validation architecture cible, accès PrévoSoft API
+  J+60    — Maquettes UX validées (wireframes + design system)
+  J+120   — Livraison v0.1 : formulaire de souscription + workflow de validation
+  J+180   — Livraison v0.5 : portail complet Phase 1 (souscription + suivi)
+  J+210   — Recette Phase 1 avec 20 agents pilotes (3 agences régionales)
+  J+270   — Déploiement Phase 1 en production (340 agents)
+  J+300   — Livraison v1.0 : module RAG + assistant IA opérationnel
+  J+360   — Livraison v1.5 : module pilotage commercial + rapports managers
+  J+420   — Recette Phase 2, tests de charge, audit sécurité tiers
+  J+450   — Déploiement Phase 2 en production — livraison finale
+  J+480   — Bilan projet, transfert de compétences, fin de garantie
+
+  Des pénalités de retard de 0,3 % du montant HT par semaine sont prévues
+  au-delà de J+180 et J+450, plafonnées respectivement à 5 % et 8 %.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7. CRITÈRES D'ATTRIBUTION
+──────────────────────────
+Les offres seront évaluées selon les critères pondérés suivants :
+
+  1. Valeur technique de l'offre                              45 %
+     — Pertinence de l'architecture proposée                (12%)
+     — Qualité de l'approche RAG / IA documentaire          (18%)
+     — Méthodologie projet et gestion des risques           (10%)
+     — Qualité de l'expérience utilisateur (UX)             (5%)
+
+  2. Prix global sur 20 mois (Phases 1 + 2)                  35 %
+
+  3. Références et adéquation de l'équipe                    15 %
+     — Pertinence des références présentées                  (8%)
+     — Adéquation des profils aux besoins                   (7%)
+
+  4. Qualité du plan de maintenance et d'évolutivité          5 %
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8. LIVRABLES ATTENDUS DANS L'OFFRE
+────────────────────────────────────
+  □ Mémoire technique (35 pages max) comprenant :
+      - Note de compréhension des enjeux métier
+      - Architecture technique cible commentée (schéma + descriptif)
+      - Approche détaillée du moteur RAG (choix du modèle LLM, stratégie
+        d'indexation, gestion des sources, évaluation de la pertinence)
+      - Plan de migration et intégration PrévoSoft v4
+      - Stratégie de tests et de recette
+      - Plan de formation des utilisateurs (agents + managers + admins)
+  □ Planning détaillé de réalisation (diagramme de Gantt Phase 1 + Phase 2)
+  □ Au moins 2 fiches de références détaillées (client, périmètre, budget,
+    résultats)
+  □ CV des 7 intervenants clés identifiés dans l'offre
+  □ Bordereau de prix détaillé (ventilé par phase, par profil, par module)
+  □ Note sur la conformité RGPD et le traitement des données personnelles
+  □ Politique de sécurité interne du candidat (document existant)
+  □ Lettre de candidature signée par le représentant légal
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+9. CONDITIONS PARTICULIÈRES
+─────────────────────────────
+  — Durée du marché : 20 mois (prestations) + 12 mois de garantie
+  — Facturation : mensuelle sur réalisé en Phase 1, à la livraison
+    de chaque module en Phase 2
+  — Propriété intellectuelle : le code source développé spécifiquement
+    pour GPA est cédé à 100 % à Groupe Prévoyance Alliance à la recette
+    définitive. Les composants open source restent sous leurs licences
+    respectives (listées dans un fichier NOTICE fourni).
+  — Clause de réversibilité : le titulaire s'engage à livrer l'ensemble
+    du code source, la documentation technique et les scripts de déploiement
+    dans un délai de 30 jours suivant toute demande de GPA.
+  — Confidentialité : signature d'un NDA préalable au kick-off obligatoire.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+10. QUESTIONS ET PRÉCISIONS
+─────────────────────────────
+Les questions relatives au présent appel d'offres doivent être adressées
+à appels-offres@prevoyance-alliance.fr avant le 9 mai 2025 à 12h00.
+Les réponses seront communiquées à l'ensemble des candidats au plus
+tard le 16 mai 2025.
+
+Une réunion de questions/réponses optionnelle en visioconférence est
+prévue le 7 mai 2025 à 14h30 (lien communiqué aux candidats inscrits).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fait à Paris, le 3 avril 2025
+La Directrice de la Transformation Digitale
+Groupe Prévoyance Alliance
+Sophie Renard

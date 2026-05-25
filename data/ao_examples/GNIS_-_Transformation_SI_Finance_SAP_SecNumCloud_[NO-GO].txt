@@ -1,57 +1,226 @@
-AVIS DE CONSULTATION - ACCORD-CADRE DE TRANSFORMATION SI FINANCE
+AVIS DE MARCHÉ — ACCORD-CADRE À BONS DE COMMANDE
+Procédure formalisée — Article L2124-2 du Code de la commande publique
 
-Acheteur : Groupe National des Infrastructures Sensibles
-Objet : Refonte complète du système d'information finance, intégration SAP S/4HANA, hébergement qualifié SecNumCloud et infogérance 24/7
-Référence : GNIS-DAF-2026-22
-Date limite de remise des offres : 29/05/2026 à 10h00
-Date de démarrage obligatoire : 10/06/2026
-Budget indicatif : 950 000 € HT sur 3 ans
-Durée : 36 mois
+═══════════════════════════════════════════════════════════════════
+GROUPE NATIONAL DES INFRASTRUCTURES SENSIBLES (GNIS)
+Direction des Affaires Financières et du Système d'Information (DAFSI)
+═══════════════════════════════════════════════════════════════════
 
-1. Contexte
-Le Groupe National des Infrastructures Sensibles engage une refonte complète de son système d'information finance. Le système actuel repose sur plusieurs applications historiques, fichiers Excel, flux manuels et interfaces comptables obsolètes. L'objectif est de migrer vers SAP S/4HANA, de reprendre l'historique comptable, d'interfacer les outils achats et de mettre en place une infogérance applicative 24/7.
+OBJET DU MARCHÉ
+───────────────
+Refonte complète du système d'information finance du GNIS : intégration
+SAP S/4HANA, reprise de l'historique comptable sur 10 ans, interfaçage
+des systèmes périphériques, hébergement qualifié SecNumCloud et
+infogérance applicative 24/7.
 
-2. Périmètre obligatoire
-Le titulaire devra assurer :
-- cadrage et urbanisation SI finance ;
-- intégration SAP S/4HANA ;
-- reprise de données comptables sur 10 ans ;
-- interfaces avec SI achats, paie, immobilisations et consolidation ;
-- paramétrage des modules FI/CO/MM ;
-- conduite du changement ;
-- support niveau 1, 2 et 3 ;
-- infogérance 24/7 ;
-- engagement de temps de rétablissement ;
-- hébergement en environnement qualifié SecNumCloud ;
-- certification ISO 27001 obligatoire du titulaire ;
-- présence sur site 4 jours par semaine pendant 12 mois.
+Référence marché : GNIS-DAF-2026-22
+Date de publication : 5 février 2026
+Date limite de remise des offres : 29 mai 2026 à 10h00
+Date de démarrage impérative : 10 juin 2026 (aucun report accepté)
 
-3. Contraintes de planning
-Le démarrage est impératif le 10/06/2026. Aucun report ne sera accepté. Une première bascule comptable est attendue au 01/01/2027. Le titulaire devra présenter une équipe complète dès la réunion de lancement : directeur de programme, architecte SAP, consultants FI/CO, consultants MM, experts migration, expert sécurité, exploitants et support.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-4. Contraintes contractuelles
-Le marché comporte des pénalités de retard, des engagements de disponibilité et une obligation de résultat sur la bascule. Les pénalités peuvent atteindre 2 % du montant annuel par semaine de retard. Le titulaire portera la responsabilité de la reprise des données et des interfaces avec les systèmes tiers.
+1. IDENTIFICATION DU POUVOIR ADJUDICATEUR
+─────────────────────────────────────────
+Groupe National des Infrastructures Sensibles
+Établissement public industriel et commercial
+3 avenue de la Grande Armée — 75116 Paris
+SIRET : 130 011 722 00045
+Représenté par son Directeur Général, M. Bernard Lecomte
 
-5. Exigences de candidature
-Les candidats devront fournir :
-- au moins trois références SAP S/4HANA finance de taille comparable ;
-- preuve de certification ISO 27001 ;
-- preuve de qualification SecNumCloud ou partenariat titulaire qualifié ;
-- CV d'une équipe projet complète ;
-- engagement de présence sur site ;
-- capacité de support 24/7 ;
-- attestation d'assurance adaptée.
+Contact marché : marches-dafsi@gnis.gouv.fr
+Téléphone : +33 (0)1 53 67 22 00
 
-6. Critères d'attribution
-Compétence SAP : 30 %
-Sécurité et SecNumCloud : 25 %
-Capacité d'infogérance : 20 %
-Planning : 15 %
-Prix : 10 %
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-7. Questions aux candidats
-- Décrivez votre méthodologie de migration SAP.
-- Présentez vos références SAP finance.
-- Détaillez votre dispositif SecNumCloud.
-- Expliquez votre organisation support 24/7.
-- Garantissez-vous la date de bascule ?
+2. CONTEXTE ET ENJEUX
+──────────────────────
+Le GNIS est un opérateur d'importance vitale (OIV) au sens de la LPM,
+gérant un parc d'infrastructures critiques réparties sur 34 sites en
+France, avec 3 200 collaborateurs et un budget de fonctionnement annuel
+de 280 M€.
+
+Son système d'information finance actuel repose sur un empilement
+applicatif hétérogène développé entre 1998 et 2012 : plusieurs modules
+comptables maison, des fichiers Excel massifs pour le contrôle de gestion,
+des interfaces manuelles avec le système paie et un entrepôt de données
+vieillissant pour le reporting. Ce dispositif présente des risques
+opérationnels majeurs (dépendance à des ressources rares, absence de
+traçabilité temps réel, clôtures comptables de 12 jours ouvrés).
+
+Le GNIS a décidé de migrer vers SAP S/4HANA comme ERP finance de
+référence dans le cadre de sa trajectoire SI 2026-2030, validée par
+son Conseil d'Administration en octobre 2025.
+
+Budget global : 950 000 € HT sur 36 mois
+Répartition prévisionnelle :
+  — Phase 1 — Cadrage et conception SAP (6 mois)       : 150 000 € HT
+  — Phase 2 — Intégration et paramétrage S/4HANA (12 mois) : 450 000 € HT
+  — Phase 3 — Reprise de données et bascule (6 mois)   : 180 000 € HT
+  — Phase 4 — Infogérance et TMA (12 mois)             : 170 000 € HT
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. PÉRIMÈTRE TECHNIQUE OBLIGATOIRE
+────────────────────────────────────
+
+3.1 Intégration SAP S/4HANA Finance
+  — Modules obligatoires : FI (General Ledger, Comptes fournisseurs,
+    Comptes clients, Actifs immobilisés), CO (Centres de coûts, Centres
+    de profit, Budget analytique), MM (Achats, Stocks, Réception)
+  — Paramétrage complet du plan comptable GNIS (400 comptes actifs)
+  — Configuration du workflow de validation des engagements de dépenses
+    (délégations de signatures selon organigramme — 6 niveaux hiérarchiques)
+  — Tableaux de bord temps réel pour la direction financière (SAP Fiori,
+    interface native obligatoire, pas de développement spécifique UI)
+  — Développements ABAP limités aux interfaces non couvertes par le
+    standard SAP (liste exhaustive à valider en phase de cadrage)
+
+3.2 Reprise de données historiques
+  — Reprise comptable sur 10 exercices (2016-2025) : environ 18 millions
+    de lignes comptables à migrer, nettoyer et équilibrer
+  — Reprise des tiers (fournisseurs, clients, administrations) : 24 000
+    entrées à dédupliquer et enrichir avant migration
+  — Reprise des immobilisations en cours et soldées depuis 2010
+  — Le titulaire est responsable de la qualité des données reprises et
+    garantit leur cohérence avec les bilans certifiés par le commissaire
+    aux comptes du GNIS sur les 3 derniers exercices
+
+3.3 Interfaces systèmes périphériques
+  — Interface bidirectionnelle avec le progiciel paie (Nibelis) :
+    comptabilisation automatique des bulletins en temps réel
+  — Interface avec le système d'information achats GNIS-Achats (progiciel
+    maison) : engagement, commande, réception, facturation en 3 voies
+  — Interface avec le système de consolidation groupe (HFM Hyperion Oracle)
+  — Interface avec la trésorerie centralisée (TUP — Trésorerie Unifiée Publique)
+  — Interface avec le système de gestion des actifs (Planon IWMS)
+
+3.4 Hébergement SecNumCloud et infrastructure
+  — L'intégralité de l'environnement SAP (DEV, QAS, PRD, DR) doit être
+    hébergée sur infrastructure qualifiée SecNumCloud par l'ANSSI
+  — Le titulaire assure en propre l'administration des bases SAP HANA
+  — Architecture haute disponibilité : clustering actif/passif avec
+    basculement automatique en moins de 5 minutes
+  — PRA : RPO ≤ 1h, RTO ≤ 2h, tests de restauration semestriels documentés
+
+3.5 Infogérance applicative 24/7
+  — Support niveaux 1, 2 et 3 sur l'ensemble des modules SAP couverts
+  — Astreinte 24h/24 — 7j/7 — 365j/an, avec équipes basées en France
+  — Présence physique obligatoire sur site GNIS Paris : 4 jours/semaine
+    pendant les 12 premiers mois de la phase d'intégration
+  — SLA de disponibilité : 99,9 % heures ouvrées (7h-20h),
+    99,5 % hors heures ouvrées
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4. EXIGENCES ET CONTRAINTES IMPÉRATIVES
+─────────────────────────────────────────
+
+4.1 Certifications OBLIGATOIRES et ÉLIMINATOIRES
+  ✦ Certification ISO 27001 — OBLIGATOIRE ET ÉLIMINATOIRE
+    Le titulaire doit être certifié ISO 27001, périmètre couvrant les
+    activités d'intégration SAP et d'infogérance applicative. La
+    certification doit être en cours de validité à la date de remise
+    des offres. Un alignement de pratiques ou une certification planifiée
+    ne satisfait pas cette exigence. Aucune dérogation accordée.
+
+  ✦ Qualification SecNumCloud — OBLIGATOIRE ET ÉLIMINATOIRE
+    Le titulaire doit héberger l'environnement SAP sur une infrastructure
+    dont il maîtrise la chaîne SecNumCloud complète. Un recours à un
+    hébergeur tiers qualifié sans responsabilité directe du titulaire
+    sur l'environnement n'est pas recevable.
+
+  ✦ Certifications SAP S/4HANA — OBLIGATOIRES
+    Au minimum 3 consultants de l'équipe projet doivent être certifiés
+    SAP S/4HANA Finance (certifications SAP actives, vérifiées lors
+    de l'analyse des offres).
+
+4.2 Contraintes de planning non négociables
+  — Démarrage le 10 juin 2026 : l'équipe complète est présentée à la
+    réunion de lancement ; les accès aux environnements sont opérationnels
+  — Première bascule comptable en production : 1er février 2027
+    (clôture de janvier 2027 entièrement sous SAP S/4HANA)
+  — Clôture annuelle 2027 entièrement sous SAP S/4HANA : 31 janvier 2028
+  — Aucun report de jalon ne sera accordé sauf force majeure qualifiée
+    par le GNIS
+
+4.3 Pénalités contractuelles
+  — Retard sur la bascule du 1er février 2027 : 2 % du montant annuel
+    HT par semaine de retard, plafonné à 20 % (soit environ 190 000 €)
+  — Non-respect du SLA de disponibilité en production : 3 000 € par heure
+    d'indisponibilité non planifiée dépassant le seuil contractuel
+  — Défaut de présence physique sur site (4j/semaine) : 800 € par jour
+    constaté manquant, sur relevé hebdomadaire signé par le chef de projet GNIS
+
+4.4 Responsabilités étendues du titulaire
+  Le titulaire engage sa responsabilité contractuelle sur :
+  — La qualité et la conformité comptable des données reprises
+  — La disponibilité de toutes les interfaces avec les systèmes tiers,
+    y compris ceux qu'il n'a pas développés (coordination obligatoire
+    avec les éditeurs tiers aux frais du titulaire)
+  — La continuité de service sans interruption au moment de la bascule
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. PROFIL DU TITULAIRE ET ÉQUIPE ATTENDUE
+───────────────────────────────────────────
+  — Au moins 3 références SAP S/4HANA Finance réalisées et basculées
+    en production au cours des 5 dernières années
+  — Au moins 1 référence dans un environnement OIV, secteur public
+    sensible ou infrastructure critique nationale
+  — Chiffre d'affaires annuel ≥ 10 M€ sur les 3 derniers exercices
+
+  Équipe projet complète à présenter dès l'offre :
+    · Directeur de programme SAP (≥ 10 ans d'expérience)
+    · Architecte SAP S/4HANA certifié
+    · 2 consultants SAP FI/CO seniors (≥ 7 ans)
+    · 1 consultant SAP MM senior
+    · 2 experts reprise de données (Migration Cockpit, LSMW, BAPI)
+    · 1 expert SAP Basis et HANA Administration
+    · 1 expert sécurité SecNumCloud
+    · 3 exploitants dédiés à l'astreinte 24/7
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6. CRITÈRES D'ATTRIBUTION
+──────────────────────────
+  1. Compétences SAP S/4HANA et références finance OIV              30 %
+  2. Conformité SecNumCloud et sécurité (ISO 27001)                 25 %
+  3. Capacité d'infogérance 24/7 et SLA proposés                    20 %
+  4. Qualité du planning et maîtrise des risques de bascule          15 %
+  5. Prix global HT sur 36 mois                                      10 %
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7. LIVRABLES ATTENDUS DANS L'OFFRE
+────────────────────────────────────
+  □ Attestation de certification ISO 27001 en cours de validité
+  □ Attestation de qualification SecNumCloud ou documentation probante
+  □ Certifications SAP S/4HANA Finance des 3 consultants nommés
+  □ Mémoire technique (40 pages max) comprenant :
+      - Méthodologie de mise en œuvre SAP S/4HANA (SAP Activate ou équivalent)
+      - Stratégie de reprise des 18 millions de lignes comptables
+      - Architecture technique cible (hébergement SecNumCloud, HA, PRA)
+      - Plan de bascule et gestion des risques opérationnels
+      - Dispositif d'infogérance 24/7 et procédures de gestion de crise
+  □ Planning détaillé sur 36 mois avec jalons contractuels identifiés
+  □ CV des 9 profils clés de l'équipe projet proposée
+  □ 3 fiches de références SAP S/4HANA Finance détaillées
+  □ Prix ventilé par phase et par profil (nombre de jours × taux journalier)
+  □ Acte d'engagement signé par le représentant légal
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8. QUESTIONS ET PRÉCISIONS
+───────────────────────────
+Les questions doivent être transmises exclusivement via la plateforme
+PLACE (marches-publics.gouv.fr), référence GNIS-DAF-2026-22,
+avant le 15 mai 2026 à 12h00.
+Les réponses seront publiées au plus tard le 26 mai 2026.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fait à Paris, le 5 février 2026
+Le Directeur des Affaires Financières et du Système d'Information
+Groupe National des Infrastructures Sensibles
+Bernard Lecomte

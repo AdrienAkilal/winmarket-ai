@@ -1,62 +1,225 @@
-DOSSIER DE CONSULTATION - PRESTATION D'INTELLIGENCE ARTIFICIELLE DOCUMENTAIRE
+DOSSIER DE CONSULTATION DES ENTREPRISES
+Marché à Procédure Adaptée — Article L2123-1 du Code de la commande publique
 
-Acheteur : Communauté d'Agglomération Val de Rive
-Objet : Mise en place d'un assistant documentaire interne basé sur l'IA générative pour les services marchés, urbanisme et juridique
-Référence : CAVR-NUM-2026-08
-Procédure : Marché à procédure adaptée
-Date limite de remise des offres : 03/06/2026 à 16h00
-Démarrage souhaité : 01/07/2026
-Budget maximum : 72 000 € HT
-Durée ferme : 4 mois
+═══════════════════════════════════════════════════════════════════
+COMMUNAUTÉ D'AGGLOMÉRATION VAL DE RIVE
+Direction de la Modernisation et du Numérique (DMN)
+═══════════════════════════════════════════════════════════════════
 
-1. Contexte
-La Communauté d'Agglomération Val de Rive dispose d'un volume documentaire important : délibérations, règlements, comptes rendus, marchés passés, pièces administratives, courriers et notes internes. Les agents rencontrent des difficultés à retrouver rapidement l'information fiable. La collectivité souhaite expérimenter un assistant documentaire permettant de rechercher dans un corpus interne et de produire des réponses sourcées.
+OBJET DU MARCHÉ
+───────────────
+Mise en place d'un assistant documentaire interne basé sur l'IA
+générative (RAG — Retrieval-Augmented Generation) pour les services
+marchés publics, urbanisme et affaires juridiques de la Communauté
+d'Agglomération Val de Rive.
 
-2. Objectifs
-Le projet doit permettre :
-- d'ingérer un corpus initial d'environ 15 000 documents PDF et Word ;
-- de rechercher en langage naturel ;
-- d'obtenir une synthèse sourcée ;
-- d'identifier les documents utilisés ;
-- de limiter les hallucinations ;
-- de respecter les contraintes de confidentialité ;
-- de fournir une interface simple pour les agents non techniques.
+Référence marché : CAVR-NUM-2026-08
+Date de publication : 18 mars 2026
+Date limite de remise des offres : 3 juin 2026 à 16h00
+Date prévisionnelle de démarrage : 1er juillet 2026
 
-3. Périmètre attendu
-Le prestataire devra proposer une solution RAG comprenant extraction de texte, OCR si nécessaire, découpage documentaire, vectorisation, base de recherche sémantique, génération de réponse et interface web. La solution devra fonctionner sur un environnement hébergé en Union européenne. Un déploiement sur infrastructure de la collectivité serait apprécié mais non imposé.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-4. Contraintes
-Le délai de réalisation est court. La collectivité souhaite une première version démontrable sous 8 semaines et une version stabilisée à 4 mois. Le budget est plafonné à 72 000 € HT. Les documents contiennent parfois des données personnelles et des informations internes. Le prestataire devra proposer une démarche RGPD et une limitation des données envoyées aux modèles externes.
+1. IDENTIFICATION DU POUVOIR ADJUDICATEUR
+─────────────────────────────────────────
+Communauté d'Agglomération Val de Rive
+Hôtel de l'Agglomération — 12 place du Général de Gaulle
+38200 Vienne
+SIRET : 200 040 814 00038
+Représentée par son Président, M. Patrick Vasseur
 
-5. Exigences techniques
-Les solutions open-source ou hybrides sont acceptées. Les modèles LLM externes sont autorisés si les données sont protégées contractuellement et si le prestataire peut détailler les flux. La collectivité souhaite éviter une dépendance forte à un fournisseur unique. Les technologies Python, ChromaDB, FAISS, PostgreSQL pgvector, Mistral, Claude ou équivalents peuvent être proposées.
+Contact marché : dsi-marches@agglo-val-de-rive.fr
+Téléphone : +33 (0)4 74 78 56 00
 
-6. Livrables
-- note de cadrage ;
-- architecture cible ;
-- pipeline d'ingestion ;
-- interface de recherche ;
-- documentation utilisateur ;
-- documentation technique ;
-- registre des risques ;
-- formation d'un groupe pilote ;
-- rapport d'évaluation.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-7. Critères d'attribution
-Compréhension du besoin : 25 %
-Méthodologie et sécurité : 25 %
-Qualité technique : 20 %
-Prix : 20 %
-Références : 10 %
+2. CONTEXTE ET ENJEUX
+──────────────────────
+La Communauté d'Agglomération Val de Rive regroupe 18 communes et
+90 000 habitants. Ses services administratifs produisent et archivent
+chaque année un volume documentaire considérable : délibérations du
+conseil communautaire, arrêtés, marchés passés, règlements d'urbanisme,
+comptes rendus de commissions, courriers réglementaires, notes internes
+et rapports techniques.
 
-8. Points à clarifier par les candidats
-Le candidat devra préciser :
-- le volume réellement traitable dans le budget ;
-- les hypothèses de qualité OCR ;
-- la méthode de validation des réponses ;
-- la stratégie pour réduire les coûts LLM ;
-- les limites du périmètre proposé ;
-- les conditions d'une phase 2.
+Ce corpus représente aujourd'hui environ 15 000 documents PDF et Word,
+éparpillés sur plusieurs espaces de stockage (serveur de fichiers NAS,
+SharePoint, GED partielle, emails archivés). Les agents des services
+marchés, urbanisme et juridique consacrent en moyenne 2 à 3 heures par
+jour à la recherche documentaire, sans garantie de retrouver la version
+à jour ou la source faisant référence.
 
-9. Éléments de vigilance
-La collectivité est ouverte à un cadrage du périmètre si le budget ne permet pas de traiter l'ensemble des documents dès la première phase. Les candidats peuvent proposer une approche pilote sur un corpus réduit, à condition de justifier la trajectoire vers l'industrialisation.
+Dans le cadre de sa feuille de route numérique 2024-2027, la DMN
+souhaite expérimenter un assistant documentaire conversationnel reposant
+sur les technologies RAG et LLM pour permettre aux agents de :
+
+  • Interroger le corpus interne en langage naturel
+  • Obtenir des réponses sourcées avec citation des documents sources
+  • Réduire le temps de recherche de 60 % en phase pilote
+  • Disposer d'un outil accessible sans formation technique préalable
+
+Le budget total alloué à ce projet est de 72 000 € HT sur 4 mois.
+Ce budget inclut la conception, le développement, le déploiement, la
+formation et le rapport d'évaluation. Il est non extensible.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. PÉRIMÈTRE FONCTIONNEL ATTENDU
+──────────────────────────────────
+
+3.1 Ingestion et indexation documentaire
+  — Traitement du corpus initial : jusqu'à 15 000 documents (PDF, DOCX,
+    XLSX, formats mixtes) issus du NAS et de SharePoint
+  — OCR automatique pour les PDF numérisés (scans de délibérations, courriers)
+  — Découpage intelligent du corpus (chunking adaptatif selon type de doc)
+  — Vectorisation et indexation dans une base de recherche sémantique
+  — Métadonnées associées : date, service émetteur, type de document,
+    référence, statut (en vigueur / archivé / remplacé)
+  — Interface d'administration pour l'ajout de nouveaux documents
+    (glisser-déposer ou synchronisation depuis SharePoint)
+
+3.2 Moteur de recherche et assistant conversationnel
+  — Interface web de questions-réponses en langage naturel (français)
+  — Réponse structurée avec : synthèse courte + sources citées + lien
+    vers le document original
+  — Mémoire conversationnelle sur 5 échanges successifs
+  — Filtres optionnels : service, période, type de document
+  — Indicateur de confiance visible pour chaque réponse
+  — Mode "citation stricte" : la réponse ne peut contenir que du texte
+    tiré mot pour mot des sources, sans reformulation LLM (mode audit)
+
+3.3 Contrainte de périmètre dans le budget
+  Les candidats sont invités à proposer un cadrage réaliste du volume
+  traitable dans l'enveloppe. Un démarrage sur un corpus réduit de
+  5 000 documents (services marchés uniquement) est acceptable si le
+  candidat justifie la trajectoire vers l'industrialisation complète
+  en phase 2 (hors périmètre du présent marché).
+
+3.4 Interface et ergonomie
+  — Application web responsive accessible depuis les postes Windows
+    des agents sans installation locale
+  — Authentification via l'Active Directory de la collectivité (LDAP /
+    Azure AD selon configuration existante)
+  — Interface épurée, sans jargon technique : accessible à des profils
+    administratifs non informaticiens
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4. EXIGENCES TECHNIQUES
+─────────────────────────
+
+4.1 Stack technique
+  — Back-end : Python (FastAPI ou Flask) privilégié ; tout autre langage
+    justifié est accepté
+  — Base vectorielle : ChromaDB, FAISS, PostgreSQL pgvector, Qdrant ou
+    équivalent open source
+  — Modèle LLM : Mistral, Claude, GPT-4o ou équivalent accessible via
+    API — les modèles locaux (Ollama) sont également acceptés
+  — Front-end : React, Vue.js ou interface Streamlit pour la phase pilote
+  — Hébergement : infrastructure cloud hébergée en Union Européenne
+    (OVHcloud, Scaleway, Azure Europe — région française préférée)
+    OU déploiement on-premise sur l'infrastructure VMware de la collectivité
+    (spécifications fournies sur demande)
+  — Containerisation Docker recommandée pour la portabilité
+
+4.2 Sécurité et RGPD
+  — Le corpus contient des données à caractère personnel (noms d'agents,
+    signatures, données de marchés nominatives) et des informations
+    sensibles de la collectivité
+  — Le prestataire devra détailler les flux de données vers les modèles LLM
+    externes et les mesures de protection associées (anonymisation,
+    chiffrement des requêtes, contrat de sous-traitance conforme RGPD)
+  — Journalisation des requêtes utilisateurs (qui a cherché quoi, quand)
+    pour les besoins d'audit interne
+  — Aucun stockage des données en dehors de l'UE
+
+4.3 Indépendance technologique
+  La collectivité souhaite éviter une dépendance forte à un fournisseur
+  unique. Les candidats devront préciser :
+  — La stratégie de remplacement du modèle LLM en cas de changement tarifaire
+  — Les conditions de réversibilité (export du corpus vectorisé)
+  — Les licences des composants utilisés (open source privilégié)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. JALONS ET PLANNING IMPÉRATIF
+──────────────────────────────────
+  J0      — Notification du marché (1er juillet 2026)
+  J+14    — Kick-off et validation de l'architecture
+  J+30    — Livraison du pipeline d'ingestion documentaire (corpus réduit)
+  J+45    — Version démontrable de l'assistant sur 5 000 documents (JALONS FERME)
+  J+60    — Version étendue au corpus complet ou au périmètre retenu
+  J+90    — Phase pilote avec 12 agents des services marchés et juridique
+  J+105   — Corrections post-pilote et optimisations
+  J+120   — Livraison finale, formation, documentation, rapport d'évaluation
+
+  La livraison d'une version démontrable à J+45 est un jalon contractuel
+  ferme. Son non-respect entraîne une pénalité de 500 € par semaine de
+  retard.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6. PROFIL DU TITULAIRE ET RÉFÉRENCES ATTENDUES
+────────────────────────────────────────────────
+  — Au moins 1 référence de projet RAG ou assistant documentaire livré
+    au cours des 3 dernières années
+  — Équipe minimale attendue : 1 chef de projet / référent technique,
+    1 développeur IA/RAG, 1 développeur back-end
+  — La taille de l'entreprise n'est pas un critère éliminatoire : les
+    structures de type ESN, startup ou indépendants regroupés en
+    groupement sont acceptés
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7. CRITÈRES D'ATTRIBUTION
+──────────────────────────
+  1. Compréhension du besoin et pertinence du cadrage proposé      25 %
+     — Réalisme du périmètre retenu dans l'enveloppe budgétaire
+     — Qualité de la note de compréhension
+
+  2. Qualité technique de la solution                              25 %
+     — Architecture RAG proposée (chunking, vectorisation, retrieval)
+     — Pertinence du choix du modèle LLM et stratégie de coûts
+     — Méthode de validation de la qualité des réponses
+
+  3. Sécurité et démarche RGPD                                     20 %
+     — Détail des flux vers les LLM externes
+     — Mesures de protection des données de la collectivité
+
+  4. Prix global et ferme HT                                       20 %
+
+  5. Références et qualification de l'équipe                       10 %
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8. LIVRABLES ATTENDUS DANS L'OFFRE
+────────────────────────────────────
+  □ Mémoire technique (20 pages max) comprenant :
+      - Note de compréhension du besoin
+      - Architecture cible commentée (schéma)
+      - Description du pipeline RAG (ingestion, chunking, vectorisation,
+        retrieval, génération)
+      - Choix du modèle LLM et justification (coût, qualité, souveraineté)
+      - Démarche RGPD et détail des flux de données
+      - Stratégie de validation et de mesure de la qualité des réponses
+      - Cadrage réaliste du volume traitable dans l'enveloppe de 72 000 €
+  □ Planning détaillé jalonnant les 4 mois
+  □ Prix global HT ventilé par phase (ingestion, développement,
+    déploiement, formation, rapport)
+  □ Fiche(s) de référence(s)
+  □ CV du référent technique IA/RAG
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+9. QUESTIONS ET PRÉCISIONS
+───────────────────────────
+Les questions relatives au présent dossier doivent être transmises à
+dsi-marches@agglo-val-de-rive.fr avant le 20 mai 2026.
+Les réponses seront communiquées à l'ensemble des candidats inscrits
+avant le 30 mai 2026.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fait à Vienne, le 18 mars 2026
+Le Président de la Communauté d'Agglomération Val de Rive
+Patrick Vasseur

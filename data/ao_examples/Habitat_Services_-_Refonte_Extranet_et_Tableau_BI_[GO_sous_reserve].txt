@@ -1,13 +1,213 @@
-Appel d'offres : Refonte extranet client et tableau de bord commercial
-Client : Habitat Services Collectivités
-Secteur : Services aux collectivités
-Budget estimé : 55 000 €
-Durée projet : 4 mois
-Date limite de réponse : 15/06/2026
+CAHIER DES CHARGES — APPEL D'OFFRES
+Procédure simplifiée — Marché privé
 
-Objet : refonte d'un extranet client avec authentification, espace documentaire et tableau de bord Power BI. Stack souhaitée : Angular, .NET, SQL Server, Power BI. Le planning est contraint et une première version est attendue sous 8 semaines.
+═══════════════════════════════════════════════════════════════════
+HABITAT SERVICES COLLECTIVITÉS
+Direction des Systèmes d'Information
+═══════════════════════════════════════════════════════════════════
 
-Compétences attendues : Angular, .NET, SQL Server, Power BI, React, Azure, Docker, Kubernetes.
-Certifications attendues : RGPD.
-Contraintes : budget non extensible, pénalités de retard possibles.
-Livrables : maquettes, application web, rapports Power BI, documentation utilisateur.
+OBJET DU MARCHÉ
+───────────────
+Refonte de l'extranet client et déploiement d'un tableau de bord
+décisionnel Power BI pour le suivi des prestations de services aux
+collectivités territoriales partenaires d'Habitat Services Collectivités.
+
+Référence marché : HSC-DSI-2026-11
+Date de publication : 20 mars 2026
+Date limite de remise des offres : 15 juin 2026 à 17h00
+Date prévisionnelle de démarrage : 7 juillet 2026
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. IDENTIFICATION DU DONNEUR D'ORDRE
+─────────────────────────────────────
+Habitat Services Collectivités SAS
+22 rue du Faubourg Saint-Antoine — 75012 Paris
+SIRET : 503 218 764 00031
+Représentée par son Directeur Général, M. Frédéric Aumont
+
+Contact marché : dsi-projets@habitat-services.fr
+Téléphone : +33 (0)1 43 72 45 90
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2. CONTEXTE ET ENJEUX
+──────────────────────
+Habitat Services Collectivités est un prestataire spécialisé dans la
+gestion externalisée de services aux collectivités territoriales :
+maintenance des espaces verts, gestion des équipements sportifs, entretien
+des bâtiments publics et logistique événementielle. La société compte
+240 collaborateurs, 85 collectivités clientes actives et traite environ
+1 200 interventions par mois.
+
+L'extranet client actuel, développé en 2017, permet aux collectivités
+de déposer des demandes d'intervention et de consulter les compte-rendus.
+Il est devenu obsolète techniquement (jQuery, PHP 7, base MySQL non
+maintenue) et fonctionnellement insuffisant : absence de suivi temps
+réel, pas de tableau de bord, interface non responsive, temps de
+chargement excessifs.
+
+Par ailleurs, la direction commerciale souffre de l'absence d'outil
+de pilotage consolidé : les données d'activité sont extraites
+manuellement depuis 3 outils différents (GMAO, extranet, ERP) pour
+produire des reportings Excel mensuels peu fiables.
+
+Le présent appel d'offres vise à :
+  1. Remettre à niveau l'extranet client sur une stack moderne
+  2. Déployer un espace décisionnel Power BI pour les managers HSC
+     et pour les responsables des collectivités clientes
+
+Budget global : 55 000 € HT — enveloppe non extensible.
+Durée de réalisation : 4 mois.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. PÉRIMÈTRE FONCTIONNEL
+─────────────────────────
+
+3.1 Extranet client — espace collectivité
+  — Authentification sécurisée par compte collectivité (login / mot de
+    passe avec lien de réinitialisation) ; intégration SSO Azure AD
+    possible si le candidat peut l'intégrer dans l'enveloppe
+  — Tableau de bord collectivité : compteurs d'interventions en cours,
+    planifiées, soldées, taux de satisfaction moyen
+  — Création de demande d'intervention en ligne :
+      · Formulaire structuré (type de prestation, site, urgence, descriptif)
+      · Dépôt de photos ou documents associés
+      · Confirmation automatique par email avec numéro de ticket
+  — Suivi en temps réel du statut des demandes :
+      Reçue → Planifiée → En cours → Réalisée → Validée → Soldée
+  — Consultation des compte-rendus d'intervention (PDF générés)
+  — Historique des interventions sur 24 mois avec filtres et export CSV
+  — Messagerie contextuelle par demande entre le responsable collectivité
+    et le chargé de compte HSC
+  — Interface 100 % responsive (tablette et mobile)
+
+3.2 Espace décisionnel Power BI — managers HSC
+  — Tableau de bord consolidé de l'activité nationale :
+      · Volume d'interventions par type, par région, par collectivité
+      · Taux de respect des délais d'intervention (SLA contractuels)
+      · Taux de satisfaction client (note issue du formulaire post-intervention)
+      · Chiffre d'affaires par collectivité et évolution mensuelle
+      · Alertes sur collectivités à risque (retards, insatisfactions répétées)
+  — Accès en lecture pour les responsables de collectivités :
+    vue restreinte à leurs propres indicateurs uniquement
+  — Données alimentées depuis 3 sources : SQL Server (GMAO), PostgreSQL
+    (nouvel extranet), API REST de l'ERP (spécifications fournies)
+  — Rafraîchissement automatique quotidien (scheduled refresh Power BI)
+  — Partage via Power BI Service (licences Microsoft 365 HSC existantes)
+
+3.3 Contrainte de périmètre dans l'enveloppe
+  Le budget de 55 000 € est très contraint pour ce double périmètre.
+  Les candidats sont invités à proposer un cadrage précis et réaliste :
+  — Fonctionnalités incluses dans le périmètre ferme
+  — Fonctionnalités reportées en option (chiffrées séparément)
+  — Choix d'architecture économiques justifiés (ex. : hébergement mutualisé,
+    utilisation d'un framework front-end léger)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4. EXIGENCES TECHNIQUES
+─────────────────────────
+
+4.1 Stack technique attendue
+  — Front-end : Angular 17+ ou React 18+ (le candidat justifie son choix)
+  — Back-end : .NET Core 8 ou Python FastAPI (selon compétences équipe)
+  — Base de données : SQL Server 2022 (existant HSC) ou PostgreSQL
+  — Décisionnel : Power BI Desktop + Power BI Service (licences Microsoft
+    365 HSC — environnement tenant existant)
+  — Hébergement : Azure (abonnement existant HSC) — App Service ou
+    conteneur Docker selon proposition du candidat
+  — CI/CD : pipeline GitHub Actions ou Azure DevOps (environnements
+    développement et production)
+
+4.2 Intégrations existantes
+  — GMAO (Maximo 7.6) : extraction SQL Server des bons de travail
+  — ERP (Sage 100c) : API REST fournie par l'éditeur (token d'accès fourni)
+  — Messagerie Microsoft 365 : envoi des notifications via Graph API
+
+4.3 Sécurité et conformité
+  — Conformité RGPD : les données collectivités et agents sont des
+    données personnelles — le prestataire fournit une analyse des
+    traitements et les clauses de sous-traitance adaptées
+  — Authentification sécurisée avec gestion des sessions et expiration
+  — Journalisation des connexions et actions sensibles
+  — Hébergement des données en France (Azure France Central)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. JALONS ET PLANNING IMPÉRATIF
+──────────────────────────────────
+  J0      — Notification du marché (7 juillet 2026)
+  J+15    — Kick-off, validation de l'architecture et des maquettes UX
+  J+30    — Maquettes UX validées (extranet + tableaux de bord)
+  J+60    — Version de recette extranet (80 % des fonctionnalités)
+  J+60    — Première version des rapports Power BI en recette
+  J+75    — Corrections post-recette
+  J+90    — Version de recette finale — tests utilisateurs (10 collectivités)
+  J+105   — Déploiement en production et formation des utilisateurs
+  J+120   — Clôture du projet — documentation et transfert de compétences
+
+  Le planning est contraint. Le candidat devra démontrer sa capacité à
+  tenir 4 mois avec les ressources proposées dans l'offre.
+  Pénalités de retard : 300 € par semaine au-delà de J+120.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6. PROFIL DU TITULAIRE ET RÉFÉRENCES ATTENDUES
+────────────────────────────────────────────────
+  — Au moins 1 référence de refonte d'extranet ou portail client
+    réalisée au cours des 3 dernières années
+  — Au moins 1 référence de déploiement Power BI (rapports, tableaux
+    de bord, connexion multi-sources) appréciée
+  — Équipe minimale attendue : 1 chef de projet, 1 développeur
+    full-stack, 1 développeur/analyste BI Power BI
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7. CRITÈRES D'ATTRIBUTION
+──────────────────────────
+  1. Pertinence et réalisme du cadrage fonctionnel proposé           30 %
+     — Adéquation périmètre / enveloppe budgétaire
+     — Clarté des fonctionnalités incluses vs. options
+
+  2. Qualité technique de la solution                                25 %
+     — Architecture proposée (extranet + BI)
+     — Qualité et pertinence de l'approche Power BI
+
+  3. Planning et capacité à tenir les délais                         20 %
+
+  4. Prix global HT                                                  15 %
+
+  5. Références et qualification de l'équipe                         10 %
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8. LIVRABLES ATTENDUS DANS L'OFFRE
+────────────────────────────────────
+  □ Mémoire technique (20 pages max) comprenant :
+      - Note de compréhension du besoin
+      - Architecture cible commentée (extranet + BI)
+      - Cadrage précis du périmètre dans l'enveloppe de 55 000 €
+      - Maquettes ou wireframes préliminaires (optionnel, apprécié)
+      - Choix techniques justifiés (stack, hébergement, Power BI Service)
+      - Démarche RGPD
+  □ Planning détaillé sur 4 mois
+  □ Prix global HT ventilé (extranet / BI / formation / documentation)
+  □ Prix des options (fonctionnalités hors périmètre ferme)
+  □ 1 ou 2 fiches de références
+  □ CV des profils intervenants
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+9. QUESTIONS ET PRÉCISIONS
+───────────────────────────
+Les questions sont à adresser à dsi-projets@habitat-services.fr
+avant le 2 juin 2026. Les réponses seront communiquées à l'ensemble
+des candidats avant le 9 juin 2026.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fait à Paris, le 20 mars 2026
+Le Directeur Général d'Habitat Services Collectivités
+Frédéric Aumont

@@ -1,13 +1,198 @@
-Appel d'offres : TMA SAP souveraine pour opérateur critique
-Client : Défense Infrastructure Nationale
-Secteur : Défense
-Budget estimé : 45 000 €
-Durée projet : 12 mois
-Date limite de réponse : 05/06/2026
+APPEL D'OFFRES RESTREINT
+Procédure formalisée — Marché de services informatiques classifiés
+Accès réservé aux prestataires habilités Confidentiel Défense
 
-Objet : tierce maintenance applicative SAP sur infrastructure souveraine qualifiée SecNumCloud. Le prestataire doit disposer de consultants SAP expérimentés, d'une qualification SecNumCloud détenue en propre et d'une capacité de support 24/7.
+═══════════════════════════════════════════════════════════════════
+DÉFENSE INFRASTRUCTURE NATIONALE (DIN)
+Direction des Systèmes d'Information Opérationnels (DSIO)
+═══════════════════════════════════════════════════════════════════
 
-Compétences attendues : SAP, ABAP, SecNumCloud, support 24/7, ITIL.
-Certifications obligatoires : SecNumCloud, ISO 27001.
-Contraintes : qualification SecNumCloud impérative, budget forfaitaire non négociable.
-Livrables : support applicatif, reporting mensuel, astreinte 24/7.
+OBJET DU MARCHÉ
+───────────────
+Tierce maintenance applicative (TMA) et infogérance 24/7 du système
+d'information SAP ERP déployé sur infrastructure souveraine qualifiée
+SecNumCloud pour un opérateur d'importance vitale (OIV) du secteur défense.
+
+Référence marché : DIN-DSIO-2026-003
+Date de publication : 2 avril 2026
+Date limite de remise des offres : 5 juin 2026 à 12h00
+Date de démarrage obligatoire : 1er septembre 2026 (non négociable)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. IDENTIFICATION DU POUVOIR ADJUDICATEUR
+─────────────────────────────────────────
+Défense Infrastructure Nationale
+Établissement public sous tutelle du Ministère des Armées
+14 rue Saint-Dominique — 75007 Paris
+SIRET : 130 020 050 00018
+Représenté par son Directeur des Systèmes d'Information, le Colonel Éric Fontaine
+
+Contact marché : marches-dsio@defense-infra.gouv.fr
+Accès dossier : portail PLACE sécurisé (accréditation préalable requise)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2. CONTEXTE ET ENJEUX
+──────────────────────
+La Défense Infrastructure Nationale opère un système d'information ERP
+basé sur SAP ECC 6.0 (migration S/4HANA planifiée pour 2028), déployé
+sur une infrastructure souveraine qualifiée SecNumCloud. Ce système
+supporte l'ensemble des fonctions logistiques, financières et RH de
+l'établissement, avec une criticité opérationnelle maximale.
+
+Le titulaire actuel du contrat de TMA arrive à échéance en août 2026.
+La DSIO lance la présente procédure pour sélectionner un nouveau
+prestataire capable d'assurer la continuité de service sans interruption
+dès le 1er septembre 2026.
+
+L'environnement technique est contraint par des exigences de souveraineté
+et de sécurité propres aux opérateurs d'importance vitale : toute donnée
+traitée, tout accès distant et tout sous-traitant impliqué doit répondre
+aux exigences de la LPM et des instructions interministérielles en vigueur.
+
+Budget forfaitaire annuel : 45 000 € HT (non extensible, non négociable).
+Durée du marché : 12 mois, reconductible 2 fois.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. PÉRIMÈTRE DE LA PRESTATION
+───────────────────────────────
+
+3.1 Maintien en condition opérationnelle (MCO)
+  — Correction des anomalies de niveaux 1, 2 et 3 sur SAP ECC 6.0
+  — Modules couverts : FI (Comptabilité), CO (Contrôle de gestion),
+    MM (Gestion des achats et stocks), PM (Maintenance), HR (Ressources humaines)
+  — Application des notes SAP et patches de sécurité
+  — Développements ABAP correctifs (défauts de paramétrage, interfaces)
+  — Gestion des transports entre environnements (DEV / QAS / PRD)
+
+3.2 Support utilisateurs
+  — Support niveau 1 assuré par les équipes internes DIN (non compris)
+  — Support niveau 2 : résolution des incidents fonctionnels complexes
+    (délai de prise en charge : 2h en heures ouvrées, 4h en astreinte)
+  — Support niveau 3 : analyse de cause racine, développements correctifs ABAP,
+    coordination avec l'éditeur SAP
+  — Astreinte 24h/24 — 7j/7 — 365j/an, y compris jours fériés et périodes
+    de crise opérationnelle (engagement contractuel, pas de clause d'exception)
+
+3.3 Infogérance applicative
+  — Supervision de la disponibilité des instances SAP (Basis)
+  — Gestion des performances et tuning base de données (Oracle sous SAP)
+  — Pilotage des sauvegardes applicatives et tests de restauration trimestriels
+  — Reporting mensuel d'activité : incidents traités, temps de résolution,
+    disponibilité, actions préventives planifiées
+
+3.4 Conformité et sécurité
+  — Toutes les interventions à distance s'effectuent via un bastion SSH
+    hébergé sur infrastructure SecNumCloud qualifiée
+  — Journalisation complète de toutes les connexions et actions sur le SI
+  — Revue trimestrielle des habilitations avec la DSIO
+  — Application des correctifs de sécurité sous 72h pour les CVE critiques
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4. EXIGENCES ET CONTRAINTES IMPÉRATIVES
+─────────────────────────────────────────
+
+4.1 Certifications OBLIGATOIRES du titulaire
+  ✦ Qualification SecNumCloud — OBLIGATOIRE ET ÉLIMINATOIRE
+    Le titulaire doit être lui-même qualifié SecNumCloud ou démontrer
+    l'exploitation du système SAP sur une infrastructure qualifiée dont
+    il est directement responsable. Un simple partenariat avec un hébergeur
+    qualifié sans maîtrise de la chaîne complète est insuffisant.
+    Aucune dérogation ni engagement d'obtention n'est accepté.
+
+  ✦ Certification ISO 27001 — OBLIGATOIRE ET ÉLIMINATOIRE
+    Le titulaire doit être certifié ISO 27001 (périmètre incluant les
+    activités de TMA et d'infogérance). La certification doit être en
+    cours de validité à la date de remise des offres. Un simple alignement
+    de pratiques ou une certification "en cours d'obtention" ne satisfait
+    pas cette exigence.
+
+  ✦ Habilitation Confidentiel Défense — OBLIGATOIRE
+    Au moins 3 consultants de l'équipe projet doivent disposer d'une
+    habilitation Confidentiel Défense valide. Cette condition est vérifiée
+    avant la notification du marché.
+
+4.2 Compétences SAP obligatoires
+  L'équipe projet doit comprendre impérativement :
+  — 2 consultants SAP seniors (≥ 7 ans) certifiés SAP sur les modules
+    FI/CO et MM, avec expérience SAP ECC 6.0 documentée
+  — 1 développeur ABAP senior (≥ 5 ans) avec expérience en environnements
+    OIV ou secteur public sensible
+  — 1 expert SAP Basis maîtrisant l'administration des systèmes SAP
+    sur Oracle, la gestion des transports et l'optimisation des performances
+  — 1 responsable de compte senior ayant une expérience défense ou
+    secteur public classifié
+
+4.3 Contraintes opérationnelles
+  — Démarrage impératif le 1er septembre 2026 sans délai de montée en
+    compétence (le titulaire reprend le système en état le jour J)
+  — Période de transition de 4 semaines avec le titulaire sortant :
+    présence physique sur site 5 jours/semaine obligatoire
+  — Toute intervention sur le système de production hors astreinte doit
+    être planifiée 48h à l'avance et validée par la DSIO
+  — Interdiction formelle de sous-traiter toute activité sans accord écrit
+    préalable de la DSIO ; les sous-traitants doivent satisfaire les mêmes
+    exigences d'habilitation et de certification
+
+4.4 Pénalités contractuelles
+  — Dépassement du délai de prise en charge niveau 2 : 200 € par heure
+    de retard, par incident
+  — Indisponibilité SAP supérieure à 4h consécutives hors maintenance
+    planifiée : 1 500 € par heure supplémentaire
+  — Non-respect de l'astreinte 24/7 : résiliation pour faute possible
+    dès le premier manquement constaté en période de crise
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. PROFIL DU TITULAIRE ET RÉFÉRENCES
+───────────────────────────────────────
+  — Au moins 2 références de TMA SAP en environnement OIV, défense ou
+    secteur public sensible, réalisées au cours des 5 dernières années
+  — Chiffre d'affaires annuel ≥ 5 M€ sur les 3 derniers exercices
+    (le faible budget du marché ne reflète pas la criticité du périmètre)
+  — Capacité démontrée à maintenir une astreinte 24/7 sur toute la durée
+    du marché avec des équipes habilitées
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6. CRITÈRES D'ATTRIBUTION
+──────────────────────────
+  1. Compétences SAP et expertise défense / OIV                    35 %
+  2. Dispositif SecNumCloud et sécurité (certification ISO 27001)  30 %
+  3. Organisation de l'astreinte 24/7 et SLA proposés              20 %
+  4. Prix global forfaitaire annuel HT                             15 %
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7. LIVRABLES ATTENDUS DANS L'OFFRE
+────────────────────────────────────
+  □ Attestation de certification ISO 27001 en cours de validité
+  □ Attestation de qualification SecNumCloud ou documentation probante
+  □ Liste nominative des consultants avec habilitations Confidentiel Défense
+  □ CV des 5 profils clés avec certification SAP associée
+  □ Mémoire technique (25 pages max) :
+      - Organisation de la TMA et processus de gestion des incidents
+      - Dispositif d'astreinte 24/7 (rotation, escalade, délais)
+      - Méthode de reprise sans interruption au 1er septembre 2026
+      - Stratégie de sécurité et conformité SecNumCloud
+  □ Références détaillées (2 minimum en environnement OIV / défense)
+  □ Prix forfaitaire annuel HT détaillé par prestation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8. QUESTIONS ET PRÉCISIONS
+───────────────────────────
+Les questions relatives au présent appel d'offres sont à adresser
+exclusivement via le portail PLACE sécurisé, après accréditation,
+avant le 22 mai 2026 à 12h00.
+Aucune question transmise par email ne recevra de réponse.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fait à Paris, le 2 avril 2026
+Le Directeur des Systèmes d'Information Opérationnels
+Défense Infrastructure Nationale
+Colonel Éric Fontaine
