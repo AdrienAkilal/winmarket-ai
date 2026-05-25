@@ -1,0 +1,2 @@
+# Référence RAG documentaire
+Mise en place d un assistant IA RAG pour analyser des documents contractuels. Stack Python, FastAPI, embeddings, base vectorielle, Claude/OpenAI. Budget 180 000 euros, durée 5 mois.

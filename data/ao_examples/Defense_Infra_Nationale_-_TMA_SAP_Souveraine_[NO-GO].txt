@@ -1,0 +1,13 @@
+Appel d'offres : TMA SAP souveraine pour opérateur critique
+Client : Défense Infrastructure Nationale
+Secteur : Défense
+Budget estimé : 45 000 €
+Durée projet : 12 mois
+Date limite de réponse : 05/06/2026
+
+Objet : tierce maintenance applicative SAP sur infrastructure souveraine qualifiée SecNumCloud. Le prestataire doit disposer de consultants SAP expérimentés, d'une qualification SecNumCloud détenue en propre et d'une capacité de support 24/7.
+
+Compétences attendues : SAP, ABAP, SecNumCloud, support 24/7, ITIL.
+Certifications obligatoires : SecNumCloud, ISO 27001.
+Contraintes : qualification SecNumCloud impérative, budget forfaitaire non négociable.
+Livrables : support applicatif, reporting mensuel, astreinte 24/7.

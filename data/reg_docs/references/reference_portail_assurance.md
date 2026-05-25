@@ -1,0 +1,2 @@
+# Référence Portail Assurance
+Refonte d un portail assurance B2B pour 2 000 courtiers. Budget 260 000 euros, durée 8 mois. Stack Angular, Java Spring Boot, PostgreSQL, Azure DevOps. Résultat : temps de traitement réduit de 35%.

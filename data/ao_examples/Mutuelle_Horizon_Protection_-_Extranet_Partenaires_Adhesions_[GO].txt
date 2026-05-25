@@ -1,0 +1,68 @@
+APPEL D'OFFRES - CAHIER DES CHARGES FONCTIONNEL ET TECHNIQUE
+
+Acheteur : Mutuelle Horizon Protection
+SIREN : 481 245 903
+Secteur : Assurance, protection sociale complémentaire
+Objet : Conception et réalisation d'un extranet partenaires pour le suivi des demandes d'adhésion collectives
+Référence consultation : MHP-DSI-2026-014
+Date de publication : 12/05/2026
+Date limite de remise des offres : 28/06/2026 à 12h00
+Date prévisionnelle de notification : 30/07/2026
+Date souhaitée de démarrage : 15/09/2026
+Budget indicatif : 320 000 € HT pour la phase de conception/réalisation, hors maintenance
+Durée prévisionnelle : 8 mois, puis maintenance évolutive optionnelle 24 mois
+
+1. Contexte général
+Mutuelle Horizon Protection souhaite moderniser les échanges avec son réseau de courtiers et partenaires distributeurs. Aujourd'hui, les demandes d'adhésion collectives sont transmises par email avec pièces jointes, puis ressaisies partiellement dans plusieurs outils internes. Ce fonctionnement provoque des délais de traitement, des pertes d'information, une difficulté de suivi et une expérience insatisfaisante pour les partenaires.
+
+Le présent appel d'offres vise à sélectionner un prestataire capable de concevoir, développer et mettre en production un extranet sécurisé permettant aux partenaires de déposer des demandes, suivre leur avancement, compléter les pièces manquantes et échanger avec les équipes de gestion.
+
+2. Objectifs du projet
+Les objectifs principaux sont les suivants :
+- offrir un portail web ergonomique et sécurisé aux partenaires ;
+- réduire les échanges email non structurés ;
+- améliorer la traçabilité des demandes et des pièces ;
+- permettre aux gestionnaires internes de suivre les dossiers dans un back-office ;
+- intégrer le portail avec deux API internes existantes ;
+- disposer d'un socle technique maintenable et documenté.
+
+3. Périmètre fonctionnel attendu
+Le prestataire devra prendre en charge les fonctionnalités suivantes :
+- authentification des partenaires par SSO ou compte sécurisé ;
+- création d'une demande d'adhésion collective ;
+- formulaire dynamique avec sauvegarde brouillon ;
+- dépôt de pièces justificatives ;
+- suivi de statut : brouillon, transmis, en analyse, incomplet, validé, refusé ;
+- messagerie contextuelle sur un dossier ;
+- notifications email ;
+- tableau de bord partenaire ;
+- back-office gestionnaire ;
+- recherche multicritères ;
+- export CSV ;
+- journal des actions ;
+- administration simple des référentiels.
+
+4. Exigences techniques
+Le client privilégie une architecture web moderne. Les technologies proposées peuvent être React, Angular ou Vue.js côté front-end et Java Spring Boot, .NET Core ou Python FastAPI côté back-end. La base de données cible pourra être PostgreSQL ou SQL Server. L'application devra exposer et consommer des API REST documentées.
+
+L'intégration avec le SI MHP repose sur deux API existantes : une API référentiel partenaires et une API création de dossier. Les spécifications seront fournies au démarrage. Les environnements de développement, recette et production devront être séparés. Le prestataire devra proposer une chaîne CI/CD et une stratégie de tests.
+
+5. Sécurité et conformité
+Le portail manipulera des données personnelles professionnelles et certaines données relatives aux contrats collectifs. Le prestataire devra respecter le RGPD, proposer des mesures de sécurité adaptées, journaliser les accès et documenter les traitements. Une certification ISO 27001 est appréciée mais non obligatoire. La qualification SecNumCloud n'est pas requise.
+
+6. Organisation attendue
+Le client souhaite une méthode agile avec ateliers de cadrage, backlog priorisé, maquettes UX/UI, démonstrations toutes les deux semaines et recette progressive. Une présence sur site est souhaitée pour les ateliers de lancement et les comités clés, mais le reste du projet peut être réalisé à distance.
+
+7. Livrables attendus
+Les livrables comprennent : note de cadrage, spécifications fonctionnelles, maquettes, dossier d'architecture, code source, documentation technique, guide utilisateur, plan de tests, cahier de recette, dossier d'exploitation, support de formation et bilan de mise en production.
+
+8. Critères d'analyse des offres
+Les offres seront analysées selon : compréhension du besoin, pertinence méthodologique, qualité de l'équipe proposée, références similaires, sécurité, planning, coût global et capacité de maintenance.
+
+9. Questions à traiter dans le mémoire technique
+Le candidat devra notamment répondre aux questions suivantes :
+- Quelle architecture recommandez-vous et pourquoi ?
+- Comment garantissez-vous la traçabilité des dossiers ?
+- Comment organisez-vous la recette avec les métiers ?
+- Quelles références similaires pouvez-vous présenter ?
+- Quels risques identifiez-vous et comment les maîtrisez-vous ?

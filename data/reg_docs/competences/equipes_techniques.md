@@ -1,0 +1,2 @@
+# Équipes techniques
+18 développeurs Java/Spring, 12 développeurs front React/Angular, 8 développeurs .NET, 6 développeurs Python, 4 Data Engineers, 3 Data Scientists, 3 DevOps Cloud, 2 Architectes solution, 2 QA automation.

@@ -1,0 +1,57 @@
+AVIS DE CONSULTATION - ACCORD-CADRE DE TRANSFORMATION SI FINANCE
+
+Acheteur : Groupe National des Infrastructures Sensibles
+Objet : Refonte complète du système d'information finance, intégration SAP S/4HANA, hébergement qualifié SecNumCloud et infogérance 24/7
+Référence : GNIS-DAF-2026-22
+Date limite de remise des offres : 29/05/2026 à 10h00
+Date de démarrage obligatoire : 10/06/2026
+Budget indicatif : 950 000 € HT sur 3 ans
+Durée : 36 mois
+
+1. Contexte
+Le Groupe National des Infrastructures Sensibles engage une refonte complète de son système d'information finance. Le système actuel repose sur plusieurs applications historiques, fichiers Excel, flux manuels et interfaces comptables obsolètes. L'objectif est de migrer vers SAP S/4HANA, de reprendre l'historique comptable, d'interfacer les outils achats et de mettre en place une infogérance applicative 24/7.
+
+2. Périmètre obligatoire
+Le titulaire devra assurer :
+- cadrage et urbanisation SI finance ;
+- intégration SAP S/4HANA ;
+- reprise de données comptables sur 10 ans ;
+- interfaces avec SI achats, paie, immobilisations et consolidation ;
+- paramétrage des modules FI/CO/MM ;
+- conduite du changement ;
+- support niveau 1, 2 et 3 ;
+- infogérance 24/7 ;
+- engagement de temps de rétablissement ;
+- hébergement en environnement qualifié SecNumCloud ;
+- certification ISO 27001 obligatoire du titulaire ;
+- présence sur site 4 jours par semaine pendant 12 mois.
+
+3. Contraintes de planning
+Le démarrage est impératif le 10/06/2026. Aucun report ne sera accepté. Une première bascule comptable est attendue au 01/01/2027. Le titulaire devra présenter une équipe complète dès la réunion de lancement : directeur de programme, architecte SAP, consultants FI/CO, consultants MM, experts migration, expert sécurité, exploitants et support.
+
+4. Contraintes contractuelles
+Le marché comporte des pénalités de retard, des engagements de disponibilité et une obligation de résultat sur la bascule. Les pénalités peuvent atteindre 2 % du montant annuel par semaine de retard. Le titulaire portera la responsabilité de la reprise des données et des interfaces avec les systèmes tiers.
+
+5. Exigences de candidature
+Les candidats devront fournir :
+- au moins trois références SAP S/4HANA finance de taille comparable ;
+- preuve de certification ISO 27001 ;
+- preuve de qualification SecNumCloud ou partenariat titulaire qualifié ;
+- CV d'une équipe projet complète ;
+- engagement de présence sur site ;
+- capacité de support 24/7 ;
+- attestation d'assurance adaptée.
+
+6. Critères d'attribution
+Compétence SAP : 30 %
+Sécurité et SecNumCloud : 25 %
+Capacité d'infogérance : 20 %
+Planning : 15 %
+Prix : 10 %
+
+7. Questions aux candidats
+- Décrivez votre méthodologie de migration SAP.
+- Présentez vos références SAP finance.
+- Détaillez votre dispositif SecNumCloud.
+- Expliquez votre organisation support 24/7.
+- Garantissez-vous la date de bascule ?

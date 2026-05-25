@@ -1,0 +1,2 @@
+# Service Data et IA
+L ESN réalise des projets data engineering, BI, tableaux de bord Power BI, pipelines ETL, modèles de scoring, RAG, LLM, assistants IA, extraction documentaire et automatisation de processus métier.

@@ -1,0 +1,13 @@
+Appel d'offres : Refonte extranet client et tableau de bord commercial
+Client : Habitat Services Collectivités
+Secteur : Services aux collectivités
+Budget estimé : 55 000 €
+Durée projet : 4 mois
+Date limite de réponse : 15/06/2026
+
+Objet : refonte d'un extranet client avec authentification, espace documentaire et tableau de bord Power BI. Stack souhaitée : Angular, .NET, SQL Server, Power BI. Le planning est contraint et une première version est attendue sous 8 semaines.
+
+Compétences attendues : Angular, .NET, SQL Server, Power BI, React, Azure, Docker, Kubernetes.
+Certifications attendues : RGPD.
+Contraintes : budget non extensible, pénalités de retard possibles.
+Livrables : maquettes, application web, rapports Power BI, documentation utilisateur.

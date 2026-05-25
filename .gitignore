@@ -1,0 +1,28 @@
+# Variables d'environnement (ne jamais commit)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Outputs générés
+data/outputs/
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code — contexte local, ne jamais push
+CLAUDE.md
+IMPROVEMENTS_v2.md
+.claude/
+
+# Logs opérationnels
+logs/
+
+# Historique des analyses (données métier)
+data/historique/

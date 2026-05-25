@@ -1,0 +1,13 @@
+Appel d'offres : Plateforme web IA documentaire pour direction juridique
+Client : Mutuelle Nova
+Secteur : Assurance et services financiers
+Budget estimé : 220 000 €
+Durée projet : 6 mois
+Date limite de réponse : 30/06/2026
+
+Objet : conception et développement d'une plateforme web sécurisée permettant d'analyser des documents contractuels avec une approche RAG et LLM. Le prestataire devra proposer une architecture cloud Azure, une interface React, une API Python FastAPI, une base PostgreSQL et une démarche RGPD.
+
+Compétences attendues : React, Python, FastAPI, RAG, LLM, Azure, PostgreSQL, Docker.
+Certifications attendues : ISO 27001, RGPD.
+Livrables : dossier d'architecture, MVP, pipeline CI/CD, documentation, transfert de compétences.
+Questions : quelle méthodologie projet proposez-vous ? quelles références similaires pouvez-vous présenter ?

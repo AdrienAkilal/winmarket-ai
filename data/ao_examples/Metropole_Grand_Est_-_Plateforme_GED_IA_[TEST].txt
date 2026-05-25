@@ -1,0 +1,200 @@
+APPEL D'OFFRES OUVERT
+Procédure formalisée — Article L2124-2 du Code de la commande publique
+
+═══════════════════════════════════════════════════════════════════
+MÉTROPOLE DU GRAND EST
+Direction des Systèmes d'Information et du Numérique (DSIN)
+═══════════════════════════════════════════════════════════════════
+
+OBJET DU MARCHÉ
+───────────────
+Conception, développement et déploiement d'une plateforme de Gestion
+Électronique de Documents (GED) augmentée par l'Intelligence Artificielle
+pour la dématérialisation et l'exploitation des archives administratives
+de la Métropole du Grand Est.
+
+Référence marché : MGE-DSIN-2025-047
+Date de publication : 15 mars 2025
+Date limite de remise des offres : 30 avril 2025 à 17h00
+Date prévisionnelle de démarrage : 1er juillet 2025
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. IDENTIFICATION DU POUVOIR ADJUDICATEUR
+─────────────────────────────────────────
+Métropole du Grand Est
+2 rue Augustin Fresnel — BP 90065
+67081 Strasbourg Cedex
+SIRET : 200 072 078 00019
+Représentée par son Président, M. Amine Kessler
+
+Contact marché : dsin-marches@metropole-grand-est.fr
+Téléphone : +33 (0)3 88 21 67 00
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2. CONTEXTE ET ENJEUX
+──────────────────────
+La Métropole du Grand Est regroupe 33 communes et 410 000 habitants.
+Ses services produisent annuellement plus de 850 000 documents administratifs
+(délibérations, arrêtés, contrats, courriers, rapports techniques) stockés
+dans des systèmes hétérogènes et partiellement numérisés.
+
+Face à l'accroissement des obligations légales de dématérialisation (loi
+ESSOC, RGAA, directive NIS2) et à la volumétrie croissante des archives,
+la DSIN souhaite se doter d'une plateforme GED de nouvelle génération
+intégrant des capacités d'IA pour :
+
+  • Classifier et indexer automatiquement les documents entrants
+  • Permettre une recherche sémantique sur l'ensemble du corpus documentaire
+  • Extraire automatiquement les données clés des marchés publics et contrats
+  • Générer des résumés et synthèses à destination des agents métier
+  • Détecter les doublons et incohérences dans les fonds documentaires
+
+Le budget total alloué à ce projet est de 380 000 € HT sur 3 ans,
+dont 240 000 € pour la phase de développement initial (Phase 1, 18 mois)
+et 140 000 € pour la maintenance évolutive (Phase 2, 24 mois).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. DESCRIPTION TECHNIQUE DES BESOINS
+──────────────────────────────────────
+
+3.1 Socle applicatif GED
+La solution devra s'appuyer sur un moteur GED open source éprouvé
+(Alfresco Community ou équivalent) et inclure :
+  - Gestion des droits et habilitations (RBAC) interfacée avec l'AD Azure
+    existant de la Métropole
+  - Workflow de validation et de signature électronique (conforme eIDAS)
+  - Connecteurs natifs vers la suite Microsoft 365 (SharePoint, Teams, Outlook)
+  - API REST documentée pour les intégrations tierces (SIRH, finances, GRC)
+  - Interface web responsive et application mobile légère (iOS / Android)
+
+3.2 Couche Intelligence Artificielle
+Le titulaire devra développer et intégrer les briques IA suivantes :
+
+  a) Moteur de classification documentaire
+     — Modèle de NLP entraîné sur le corpus métier de la collectivité
+     — Précision cible : ≥ 92% sur les 45 typologies documentaires définies
+     — Apprentissage actif avec correction par les agents métier
+
+  b) Recherche sémantique (RAG — Retrieval-Augmented Generation)
+     — Indexation vectorielle de l'ensemble du corpus (objectif : 5M pages)
+     — Moteur de questions-réponses en langage naturel (français)
+     — Modèle LLM souverain ou hébergé en France (SecNumCloud recommandé)
+     — Temps de réponse cible : < 3 secondes pour 95% des requêtes
+
+  c) Extraction d'informations structurées
+     — Extraction automatique : parties, montants, échéances, clauses clés
+       depuis les contrats et marchés publics (formats PDF, DOCX, XML)
+     — Taux d'extraction cible : ≥ 88% sur les champs prioritaires
+
+  d) Génération de synthèses
+     — Résumés automatiques paramétrables (longueur, public cible)
+     — Génération de fiches de lecture pour les élus et directeurs
+
+3.3 Infrastructure et hébergement
+  - Déploiement sur infrastructure cloud privé ou hybride (Azure Government
+    ou OVHcloud SecNumCloud qualifié)
+  - Architecture Kubernetes pour la scalabilité et la résilience
+  - Conformité RGPD et HDS si des données de santé sont concernées
+  - PRA avec RPO ≤ 4h et RTO ≤ 8h
+  - Sauvegarde quotidienne avec rétention 90 jours
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4. EXIGENCES ET CONTRAINTES
+─────────────────────────────
+
+4.1 Certifications obligatoires
+  ✦ ISO 27001 (sécurité de l'information) — OBLIGATOIRE
+  ✦ Qualification SecNumCloud ou engagement d'obtention sous 12 mois
+  ✦ Référentiel Général d'Accessibilité (RGAA 4.1) — niveau AA minimum
+
+4.2 Contraintes réglementaires
+  — Les données traitées ne peuvent être hébergées hors de l'Union Européenne
+  — Les modèles de LLM utilisés doivent garantir la confidentialité des données
+    (pas d'envoi vers des API tierces non qualifiées sans accord préalable)
+  — Conformité NF Z 42-013 pour l'archivage électronique à valeur probante
+
+4.3 Contraintes techniques d'intégration
+  — Reprise de l'existant : migration de 2,3 millions de documents depuis
+    l'outil Docuware actuellement en production (plan de migration fourni)
+  — Interopérabilité avec le progiciel financier Grand Angle (Berger-Levrault)
+  — SSO via Azure AD (protocole SAML 2.0 / OpenID Connect)
+  — Supervision intégrable dans la stack de monitoring existante (Zabbix)
+
+4.4 Délais impératifs
+  — Livraison de la plateforme GED socle : 6 mois après notification
+  — Livraison du module IA (classification + recherche) : 12 mois
+  — Livraison complète et recette finale : 18 mois
+  — La non-tenue des jalons entraîne l'application de pénalités contractuelles
+    de 0,5% du montant HT par semaine de retard, plafonnées à 10%
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. PROFIL DU TITULAIRE ET RÉFÉRENCES ATTENDUES
+────────────────────────────────────────────────
+
+5.1 Capacités techniques requises
+Les candidats devront justifier :
+  — D'au moins 3 références similaires (GED + IA) réalisées au cours
+    des 5 dernières années, dont au minimum 1 dans le secteur public
+  — D'une équipe projet dédiée comprenant : 1 chef de projet certifié PMP
+    ou Prince2, 2 développeurs full-stack (Python / React), 1 data scientist
+    spécialisé NLP, 1 architecte cloud certifié Azure ou AWS
+  — De la maîtrise des technologies : Python, FastAPI, React, PostgreSQL,
+    Elasticsearch / OpenSearch, LangChain ou équivalent RAG, Docker, Kubernetes
+
+5.2 Capacités financières
+  — Chiffre d'affaires annuel moyen ≥ 1,5 M€ sur les 3 derniers exercices
+  — Le groupement d'entreprises est autorisé (mandataire + co-traitants)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6. CRITÈRES D'ATTRIBUTION
+──────────────────────────
+
+Les offres seront évaluées selon les critères pondérés suivants :
+
+  1. Valeur technique de l'offre                          50 %
+     — Qualité de l'architecture proposée               (15%)
+     — Pertinence de l'approche IA et NLP               (20%)
+     — Plan de migration et gestion des risques         (10%)
+     — Qualité de la méthodologie projet                 (5%)
+
+  2. Prix global et ferme HT                             30 %
+
+  3. Références et expérience de l'équipe                15 %
+
+  4. Qualité du support et de la maintenance              5 %
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7. LIVRABLES ATTENDUS DANS L'OFFRE
+────────────────────────────────────
+  □ Mémoire technique (30 pages max)
+  □ Planning détaillé de réalisation (diagramme de Gantt)
+  □ Architecture technique cible (schéma + descriptif)
+  □ Fiches de références clients (3 minimum)
+  □ CV des intervenants clés
+  □ Bordereau de prix détaillé (BPD)
+  □ Acte d'engagement signé
+  □ DC1 et DC2 complétés
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8. QUESTIONS ET PRÉCISIONS
+───────────────────────────
+Les questions relatives au présent appel d'offres doivent être adressées
+exclusivement via la plateforme de dématérialisation des marchés publics
+PLACE (www.marches-publics.gouv.fr) avant le 15 avril 2025.
+
+Les réponses aux questions seront publiées sur la même plateforme
+au plus tard le 22 avril 2025.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fait à Strasbourg, le 15 mars 2025
+Le Président de la Métropole du Grand Est
+Amine Kessler

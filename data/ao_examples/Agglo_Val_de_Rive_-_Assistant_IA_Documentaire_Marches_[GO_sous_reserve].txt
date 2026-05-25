@@ -1,0 +1,62 @@
+DOSSIER DE CONSULTATION - PRESTATION D'INTELLIGENCE ARTIFICIELLE DOCUMENTAIRE
+
+Acheteur : Communauté d'Agglomération Val de Rive
+Objet : Mise en place d'un assistant documentaire interne basé sur l'IA générative pour les services marchés, urbanisme et juridique
+Référence : CAVR-NUM-2026-08
+Procédure : Marché à procédure adaptée
+Date limite de remise des offres : 03/06/2026 à 16h00
+Démarrage souhaité : 01/07/2026
+Budget maximum : 72 000 € HT
+Durée ferme : 4 mois
+
+1. Contexte
+La Communauté d'Agglomération Val de Rive dispose d'un volume documentaire important : délibérations, règlements, comptes rendus, marchés passés, pièces administratives, courriers et notes internes. Les agents rencontrent des difficultés à retrouver rapidement l'information fiable. La collectivité souhaite expérimenter un assistant documentaire permettant de rechercher dans un corpus interne et de produire des réponses sourcées.
+
+2. Objectifs
+Le projet doit permettre :
+- d'ingérer un corpus initial d'environ 15 000 documents PDF et Word ;
+- de rechercher en langage naturel ;
+- d'obtenir une synthèse sourcée ;
+- d'identifier les documents utilisés ;
+- de limiter les hallucinations ;
+- de respecter les contraintes de confidentialité ;
+- de fournir une interface simple pour les agents non techniques.
+
+3. Périmètre attendu
+Le prestataire devra proposer une solution RAG comprenant extraction de texte, OCR si nécessaire, découpage documentaire, vectorisation, base de recherche sémantique, génération de réponse et interface web. La solution devra fonctionner sur un environnement hébergé en Union européenne. Un déploiement sur infrastructure de la collectivité serait apprécié mais non imposé.
+
+4. Contraintes
+Le délai de réalisation est court. La collectivité souhaite une première version démontrable sous 8 semaines et une version stabilisée à 4 mois. Le budget est plafonné à 72 000 € HT. Les documents contiennent parfois des données personnelles et des informations internes. Le prestataire devra proposer une démarche RGPD et une limitation des données envoyées aux modèles externes.
+
+5. Exigences techniques
+Les solutions open-source ou hybrides sont acceptées. Les modèles LLM externes sont autorisés si les données sont protégées contractuellement et si le prestataire peut détailler les flux. La collectivité souhaite éviter une dépendance forte à un fournisseur unique. Les technologies Python, ChromaDB, FAISS, PostgreSQL pgvector, Mistral, Claude ou équivalents peuvent être proposées.
+
+6. Livrables
+- note de cadrage ;
+- architecture cible ;
+- pipeline d'ingestion ;
+- interface de recherche ;
+- documentation utilisateur ;
+- documentation technique ;
+- registre des risques ;
+- formation d'un groupe pilote ;
+- rapport d'évaluation.
+
+7. Critères d'attribution
+Compréhension du besoin : 25 %
+Méthodologie et sécurité : 25 %
+Qualité technique : 20 %
+Prix : 20 %
+Références : 10 %
+
+8. Points à clarifier par les candidats
+Le candidat devra préciser :
+- le volume réellement traitable dans le budget ;
+- les hypothèses de qualité OCR ;
+- la méthode de validation des réponses ;
+- la stratégie pour réduire les coûts LLM ;
+- les limites du périmètre proposé ;
+- les conditions d'une phase 2.
+
+9. Éléments de vigilance
+La collectivité est ouverte à un cadrage du périmètre si le budget ne permet pas de traiter l'ensemble des documents dès la première phase. Les candidats peuvent proposer une approche pilote sur un corpus réduit, à condition de justifier la trajectoire vers l'industrialisation.
