@@ -21,8 +21,8 @@ GO sous réserve : le projet est intéressant mais nécessite clarification, ré
 NO-GO : le projet est hors périmètre, non rentable, trop risqué ou bloqué par une certification/contrainte obligatoire.
 
 ## Seuils recommandés
-Score >= 80 : GO.
-Score entre 60 et 79 : GO sous réserve.
+Score >= 88 : GO.
+Score entre 60 et 87 : GO sous réserve.
 Score < 60 : NO-GO.
 Toute règle bloquante prime sur le score.
 

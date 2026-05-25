@@ -1,144 +1,133 @@
-# Études de Cas - Secteur Assurance
+# Études de cas — Secteur Assurance et Services Financiers
 
-## Cas #1: Mutuelle Nova - Plateforme IA Documentaire Juridique
-
-### Contexte Client
-- **Type:** Mutuelle d'assurance santé, 50k adhérents
-- **Problématique:** Traitement manuel de 500+ documents juridiques/mois par équipe de 3 juristes
-- **Enjeu:** Réduire temps traitement de 2 jours à 2 heures par document, tout en garantissant confidentialité absolue
-
-### Solution Déployée
-**Stack Technologique:**
-- Backend: Python 3.11 + FastAPI
-- LLM: Claude 3.5 Sonnet fine-tuned sur corpus juridique Mutuelle
-- RAG: Vector DB PostgreSQL pgvector
-- Infra: AWS ECS (Fargate) + RDS PostgreSQL
-- Sécurité: AES-256 encryption at-rest/in-transit, SecNumCloud certified
-
-**Architecture Spécifique:**
-- Document chunking strategy: Par section juridique (clauses de non-responsabilité, conditions d'adhésion, etc)
-- Retrieval: Hybrid search (BM25 + semantic embeddings)
-- LLM prompt: 3-shot examples of correct extraction + explicit instructions on contradictions handling
-- Post-processing: Validation rules (check "Date signature < Date effective") + human review queue
-
-### Résultats
-- **Timeline:** 11 mois (M1: discovery, M2-M10: dev+testing, M11: UAT+deployment)
-- **Équipe:** 1 Chef Projet + 2 Lead Techs + 4 Developers + 1 QA
-- **Performance:** 98% accuracy on document classification, 2h processing time (vs 2 days manual)
-- **Cost Savings:** €180k/year in reduced juriste hours
-- **Satisfaction Client:** 9.2/10 (NPS)
-
-### Certifications & Compliance
-- **Certifications:** SecNumCloud, ISO 27001, RGPD compliance validated
-- **Data Residency:** France (aws.eu-west-1)
-- **Audit:** Annual SecNumCloud audit passed without findings
-- **Incident:** Zero security incidents in 18 months production
-
-### Key Learnings
-1. **Prompt engineering is critical:** First iteration accuracy was 65%, after 3 rounds of prompt refinement → 98%
-2. **Chunking strategy matters:** Default chunking (500 tokens) led to context loss. Section-based chunking fixed it.
-3. **Human-in-the-loop:** Don't automate 100%. Queue ambiguous documents (10% of volume) for manual review.
-4. **Client expectation management:** Promised 95% → delivered 98% (pleasant surprise)
-
-### References Disponibles
-- Contact: Marie Dupont, CIO Mutuelle Nova (marie.dupont@mutuelle-nova.fr)
-- Case study detaillée: 12 pages, architecture diagrams, performance charts
-- Demo access: Environment UAT avec 50 documents test
+Ces études de cas illustrent des projets réalisés par NovaSoft Conseil dans le secteur assurance et services financiers. Elles sont destinées à alimenter les arguments de références dans les candidatures aux appels d'offres.
 
 ---
 
-## Cas #2: Horizon Protection - Plateforme Extranet Partenaires
+## Cas #1 : Mutuelle Nova — Plateforme IA documentaire pour direction juridique
 
-### Contexte Client
-- **Type:** Assurance IARD, 200+ partenaires (agents, courtiers)
-- **Problématique:** Plateforme legacy (1998, ColdFusion) lente, pas de mobile, mauvaise UX
-- **Enjeu:** Refonte complète en cloud, mobile-first, API-centric architecture
+### Contexte client
+Mutuelle de complémentaire santé, 310 000 adhérents. La direction juridique (12 juristes) gérait manuellement un corpus de 8 500 documents contractuels, réglementaires et de jurisprudence. Temps de recherche documentaire : 3 heures par juriste par jour. Aucun outil de recherche sémantique disponible.
 
-### Solution Déployée
-**Tech Stack:**
-- Frontend: React 18 + TypeScript + Tailwind CSS (responsive, PWA-ready)
-- Backend: Node.js + Express + GraphQL API
-- Database: PostgreSQL + Redis (session cache)
-- Infra: Kubernetes on AWS EKS
-- Authentication: OAuth2 + Keycloak
+### Solution déployée
+Plateforme web sécurisée combinant un moteur RAG documentaire et un module d'analyse automatisée des contrats entrants.
 
-**Modules Clés:**
-1. Dashboard: Real-time KPIs (primes en cours, taux acception, etc)
-2. Document Management: Upload contrats, signatures électroniques
-3. Reporting: Custom export Excel/PDF
-4. Mobile App: iOS + Android via React Native
+**Stack technique :**
+- Back-end : Python 3.11 + FastAPI
+- LLM : Claude 3.5 Sonnet (Anthropic) pour la génération et l'extraction structurée
+- Base vectorielle : PostgreSQL pgvector pour la recherche sémantique
+- Front-end : React 18 + TypeScript
+- Infrastructure : Azure France Central, Docker, Kubernetes
+- Sécurité : chiffrement AES-256, SSO Azure AD, audit trail complet, conformité RGPD
 
-### Résultats
-- **Timeline:** 9 mois (4 sprints de 2 semaines/mois)
-- **Équipe:** 1 PM + 2 Lead Dev (BE + FE) + 5 Developers + 2 QA
-- **Adoption:** 85% partenaires active 6 mois post-launch
-- **Performance:** 99.8% uptime, <500ms response time p95
-- **Cost:** €45k/month cloud infra (savings vs legacy: €15k/month)
+**Fonctionnalités clés :**
+- Assistant conversationnel en langage naturel avec citation des sources documentaires
+- Extraction automatique des clauses clés des contrats entrants (parties, montants, échéances, clauses de résiliation)
+- Détection des clauses atypiques ou à risque avec niveau d'alerte
+- Génération automatique d'un rapport de revue contractuelle en PDF
 
-### Metrics de Succès
-- Document processing time: 10 min → 1 min
-- Mobile conversion rate: 0% → 35%
-- Support tickets: 150/month → 40/month (70% reduction)
+### Résultats obtenus
+- Temps de recherche documentaire réduit de 3h à 25 min par juriste par jour
+- Taux de couverture documentaire : 98 % du corpus indexé dès la mise en production
+- Adoption : 100 % des juristes utilisateurs actifs à 6 semaines du déploiement
+- Économie estimée : 140 000 € par an en heures juristes libérées
 
-### Risks & Mitigation
-- **Risk:** 200+ partenaires concurrent usage → capacity planning
-  - Mitigation: Load testing with 1000 simultaneous users, auto-scaling Kubernetes
-- **Risk:** Data migration from legacy system (1M contracts)
-  - Mitigation: Phased migration + parallel run for 2 weeks
+### Organisation projet
+- Durée : 6 mois (cadrage, développement, pilote, production)
+- Équipe : 1 chef de projet, 1 consultant IA/RAG, 2 développeurs full-stack, 1 ingénieur DevOps, 1 QA
+- Budget : 220 000 € HT
+
+### Enseignements clés
+La qualité du chunking documentaire (découpage par section juridique plutôt que par nombre de tokens) a été le facteur décisif pour la précision des réponses. La validation humaine systématique des documents à faible score de confiance a maintenu un niveau de fiabilité élevé.
 
 ---
 
-## Cas #3: Assur'Complet - Refonte Infrastructure SAP Souveraine
+## Cas #2 : Horizon Protection — Extranet partenaires pour réseau de courtiers
 
-### Contexte Client
-- **Type:** Assurance multirisque (auto, habitation, santé), 150 salariés
-- **Problématique:** SAP on-premises (aging hardware, maintenance coûteux). Besoin cloud mais avec contrainte régalienne
-- **Enjeu:** Migration SAP → cloud public (critère national français) tout en maintenant conformité SecNumCloud
+### Contexte client
+Mutuelle santé et prévoyance collective, 4 200 entreprises clientes, réseau de 340 courtiers. Les demandes d'adhésion collective transitaient intégralement par email avec pièces jointes Word, ressaisies manuellement dans le système de gestion. Délai de traitement moyen : 10 jours. Taux d'erreur de saisie : 12 %.
 
-### Solution Déployée
-- **Source:** SAP ECC 6.0 (legacy ERP)
-- **Target:** SAP S/4HANA on Azure (France Central datacenter)
-- **Middleware:** MuleSoft Anypoint pour intégrations custom
+### Solution déployée
+Extranet partenaires permettant la saisie, le dépôt de pièces, le suivi en temps réel et la messagerie contextuelle, avec back-office gestionnaire et intégration au SI interne.
 
-### Approche Technique
-1. **Phase 0:** Application readiness (code cleanup, simplification)
-2. **Phase 1:** Build S/4HANA environment + data model
-3. **Phase 2:** Data migration (3-way cutover: SAP→target, validate, rollback available)
-4. **Phase 3:** UAT + go-live
-5. **Phase 4:** Optimization (memory tuning, batch job scheduling)
+**Stack technique :**
+- Front-end : React 18 + TypeScript, interface responsive
+- Back-end : Java Spring Boot, API REST documentée
+- Base de données : PostgreSQL 15
+- Authentification : SSO Azure Active Directory (SAML 2.0)
+- Intégrations : API référentiel partenaires + API création dossier CEGID Mutuelle
+- CI/CD : GitHub Actions, environnements DEV / Recette / Production séparés
+- Infrastructure : Azure App Service, Azure France Central
 
-### Résultats
-- **Timeline:** 16 mois
-- **Équipe:** 1 Program Manager + 4 SAP consultants + 5 developers (MuleSoft) + 2 DBAs
-- **Go-live:** Zero downtime migration (30 min cutover window)
-- **Data:** 10M contracts migrated, data validation 99.9% match
-- **Cost Savings:** €80k/year in licensing + €120k/year in maintenance
+**Fonctionnalités clés :**
+- Formulaire de souscription dynamique avec sauvegarde brouillon
+- Dépôt et contrôle de cohérence des pièces justificatives
+- Cycle de vie du dossier (brouillon → soumis → en analyse → validé → actif)
+- Messagerie contextuelle par dossier
+- Back-office gestionnaire avec file de traitement et tableau de bord manager
 
-### Certification Achievements
-- SecNumCloud qualified provider (Azure France Central)
-- RGPD compliance: DPA signed, data controller named
-- Audit ISO 27001: Passed with 0 findings
+### Résultats obtenus
+- Délai de traitement réduit de 10 jours à 2,5 jours
+- Taux d'erreur de saisie réduit de 12 % à 1,8 %
+- Réduction des échanges email non structurés de 70 %
+- 85 % des courtiers actifs sur le portail à 3 mois du déploiement
+
+### Organisation projet
+- Durée : 8 mois (méthode agile, sprints de 2 semaines, recette progressive avec panel de courtiers)
+- Équipe : 1 chef de projet, 2 développeurs full-stack, 1 UX designer, 1 QA
+- Budget : 310 000 € HT
+
+### Enseignements clés
+La recette progressive avec un panel de 15 courtiers pilotes a permis d'identifier 23 points d'amélioration UX avant le déploiement général, évitant une refonte post-production coûteuse. L'accès anticipé aux API du SI client a été un facteur critique.
 
 ---
 
-## Comparaison Cas / Sélection pour RFP
+## Cas #3 : Groupe Prévoyance Régionale — Tableau de bord décisionnel et pilotage commercial
 
-| Critère | Plateforme IA | Extranet Partenaires | Migration SAP |
-|---------|---------------|----------------------|------------------|
-| **Complexité Tech** | Haute (LLM, embeddings) | Moyenne (CRUD full-stack) | Très Haute (ERP) |
-| **Timeline Optimal** | 12+ mois | 8-10 mois | 15-20 mois |
-| **Team Size** | 7-8 persons | 7-8 persons | 10-15 persons |
-| **Budget Range** | €400-600k | €200-400k | €800k-1.2M |
-| **When to Sell** | Client has IA strategy | Legacy app modernization | ERP migration planning |
-| **Success Factor** | Prompt quality + team expertise | UX/Product design | Change management + testing rigor |
+### Contexte client
+Acteur de la prévoyance collective, 18 000 entreprises clientes, 280 agents commerciaux sur 22 agences. Absence d'outil de pilotage commercial consolidé : les données d'activité étaient extraites manuellement depuis 3 systèmes (CRM, ERP, tableurs Excel). Production des rapports mensuels : 2 jours par mois pour l'équipe direction.
 
-### Utilisation dans RFP Responses
+### Solution déployée
+Plateforme décisionnelle Power BI multi-sources avec ETL automatisé et espace de pilotage sécurisé pour les managers et directeurs régionaux.
 
-**Si RFP mentionne:** "IA Documentaire, RAG, confidentialité stricte"
-→ Cite: **Cas #1 Mutuelle Nova** (exact match)
+**Stack technique :**
+- Décisionnel : Power BI Service (tenant Microsoft 365 client)
+- ETL : Python + Azure Data Factory pour l'alimentation depuis les 3 sources
+- Modèle de données : star schema avec couche sémantique documentée
+- Sources intégrées : CRM Salesforce (API REST), ERP Sage 100c (SQL Server), export Excel automatisé
+- Rafraîchissement : schedulé toutes les 4 heures en heures ouvrées
+- Sécurité : Row-Level Security Power BI (accès restreint par agence et par niveau hiérarchique)
 
-**Si RFP mentionne:** "Refonte UI/UX, mobile-first, partenaires externes"
-→ Cite: **Cas #2 Horizon Protection** (similar stakeholder management)
+**Livrables :**
+- 4 tableaux de bord (direction nationale, directeur régional, manager agence, agent)
+- Dictionnaire des 38 indicateurs avec formules, périmètres et règles de calcul
+- Automatisation des rapports mensuels PDF (envoi automatique par email)
+- Formation de 22 managers et 4 administrateurs
 
-**Si RFP mentionne:** "SAP cloud migration, SecNumCloud, France"
-→ Cite: **Cas #3 Assur'Complet** (infrastructure + compliance expertise)
+### Résultats obtenus
+- Production du rapport mensuel : de 2 jours à 15 minutes (automatisée)
+- Temps d'accès aux indicateurs commerciaux : de 48h à temps réel
+- Adoption : 94 % des managers utilisateurs hebdomadaires à 2 mois
+
+### Organisation projet
+- Durée : 4 mois
+- Équipe : 1 chef de projet, 2 data analysts/BI, 1 data engineer, 1 UX
+- Budget : 95 000 € HT
+
+### Enseignements clés
+La définition partagée des indicateurs avant tout développement (atelier de gouvernance avec la direction financière et la direction commerciale) a évité 3 itérations correctives sur les formules de calcul. Les tableaux de bord non utilisés sont systématiquement ceux dont les KPI n'ont pas été co-construits avec les utilisateurs finaux.
+
+---
+
+## Tableau comparatif — Quand citer chaque référence
+
+| Critère de l'AO | Référence à citer |
+|---|---|
+| IA documentaire, RAG, LLM, direction juridique | Cas #1 — Mutuelle Nova |
+| Extranet partenaires, portail courtiers, workflow dossiers | Cas #2 — Horizon Protection |
+| BI, Power BI, pilotage commercial, tableaux de bord | Cas #3 — Prévoyance Régionale |
+| Secteur assurance / mutuelle (générique) | Cas #1 ou #2 selon techno demandée |
+| Intégration SI, API, synchronisation multi-sources | Cas #2 ou #3 |
+| React + FastAPI + Azure | Cas #1 |
+| Java Spring Boot + PostgreSQL | Cas #2 |
+| Python + Power BI + ETL | Cas #3 |

@@ -1,435 +1,174 @@
-# Glossaire Métier - Appels d'Offres & ESN
+# Glossaire métier — Appels d'offres et ESN
 
-## SECTION A: Termes Clients & Business
-
-### Appel d'Offres (AO)
-**Définition:** Document formalisé par un client/acheteur public ou privé décrivant un besoin et invitant des fournisseurs à proposer une solution.
-
-**Synonymes:** Request for Proposal (RFP), Tender, Appel de compétition
-
-**Structure typique:**
-1. Contexte client
-2. Besoin/scope détaillé
-3. Critères évaluation
-4. Budget/timeline
-5. Clauses contractuelles
-
-**Importance ESN:** Le "brief de projet" pour notre candidature
+Ce glossaire recense les termes clés rencontrés dans les appels d'offres et dans la pratique des ESN françaises. Il est destiné à ancrer la compréhension du LLM sur le vocabulaire métier utilisé dans les documents d'analyse.
 
 ---
 
-### Maître d'Ouvrage (MOA)
-**Définition:** Client = la personne/entité qui lance l'AO et paiera pour livraison.
+## A — Termes liés aux marchés et à la procédure
 
-**Rôles typ:**
-- Définir besoin
-- Évaluer candidatures
-- Accepter/Rejeter livrables
-- Payer factures
+**Appel d'offres (AO)**
+Document émis par un client public ou privé pour solliciter des propositions de prestataires en vue de réaliser un projet ou une prestation. Synonymes : cahier des charges, dossier de consultation, RFP (Request for Proposal). Structure typique : contexte client, périmètre du besoin, critères d'évaluation, budget, délais, clauses contractuelles.
 
-**Antagonisme avec:** Maître d'Œuvre (nous = fournisseur)
+**MAPA (Marché à Procédure Adaptée)**
+Procédure de passation de marché public dont les règles sont définies librement par l'acheteur dans les limites fixées par le Code de la commande publique. Utilisé pour les marchés dont le montant est inférieur aux seuils européens. Procédure plus souple et plus rapide que l'appel d'offres ouvert formalisé.
 
----
+**Appel d'offres ouvert**
+Procédure formalisée applicable au-delà des seuils européens dans laquelle tout opérateur économique peut soumettre une offre. Le cahier des charges est publié intégralement et les critères d'attribution sont définis à l'avance.
 
-### Maître d'Œuvre (MOE)
-**Définition:** Nous = fournisseur service qui exécute le projet pour MOA.
+**Pouvoir adjudicateur / Donneur d'ordre**
+Entité qui lance l'appel d'offres et qui choisira le prestataire. Peut être une administration publique (mairie, ministère, établissement public) ou une entreprise privée ayant choisi de formaliser sa mise en concurrence.
 
-**Responsabilités:**
-- Comprendre besoin MOA
-- Proposer solution
-- Exécuter + livrer
-- Supporter/Maintenir
+**Maître d'ouvrage (MOA)**
+Le client — celui qui exprime le besoin, finance le projet et réceptionne les livrables. Il valide les jalons et signe le procès-verbal de recette.
 
----
+**Maître d'œuvre (MOE)**
+Le prestataire — nous — qui conçoit et réalise la solution pour le compte du MOA. Il est responsable de la conformité des livrables aux spécifications.
 
-### Scope (Périmètre)
-**Définition:** Ensemble des fonctionnalités, modules, services inclus dans le projet.
+**CCTP (Cahier des Clauses Techniques Particulières)**
+Document technique de l'AO décrivant précisément les exigences fonctionnelles et techniques du projet. C'est le document principal à analyser pour scorer l'adéquation technique.
 
-**Exemple:** 
-```
-Scope inclus: Plateforme web + API + Document management
-Scope exclus: Mobile app, Training utilisateurs final, Support 24/7
-```
+**CCAP (Cahier des Clauses Administratives Particulières)**
+Document administratif et contractuel de l'AO précisant les conditions d'exécution du marché : délais, pénalités, propriété intellectuelle, conditions de résiliation, modalités de facturation.
 
-**Importance:** Clarté scope = 80% succès projet
+**DC1 / DC2**
+Formulaires administratifs standard utilisés dans les marchés publics français. Le DC1 est la lettre de candidature (déclaration sur l'honneur). Le DC2 regroupe les informations sur le candidat (capacités économiques, références).
 
-**Related term:** Scope creep = ajouts non-contractuels
+**DUME (Document Unique de Marché Européen)**
+Formulaire européen permettant à un candidat de déclarer son aptitude à participer à un marché public, remplaçant une partie des documents administratifs habituels.
+
+**Acte d'engagement**
+Document signé par le candidat retenu formalisant son engagement à respecter les termes du marché. Sa signature marque le début du marché.
 
 ---
 
-### SLA (Service Level Agreement)
-**Définition:** Garantie contractuel sur performance service.
+## B — Termes liés à l'évaluation et au scoring
 
-**Exemples:**
-- "99.5% uptime" = Service dispo 99.5% du temps
-- "<500ms response time p95" = 95% requêtes répondent en <500ms
-- "Support L1 within 2 hours" = Réponse support rapide
+**Critères d'attribution**
+Critères pondérés utilisés par le client pour évaluer et classer les offres. Typiquement : valeur technique (40-50 %), prix (30-35 %), références et équipe (15-20 %), maintenance (5 %). La somme des pondérations est toujours égale à 100 %.
 
-**Importance:** Client besoin SLA pour budgétisation risks
+**Mémoire technique**
+Document principal de la réponse à un AO, rédigé par le prestataire. Il présente la compréhension du besoin, la solution proposée, la méthodologie, l'équipe, le planning et les références. C'est le document évalué sur les critères techniques.
 
----
+**Bordereau de prix (BPD)**
+Document de décomposition du prix par poste, profil ou phase. Permet au client de comparer les offres et de détecter des anomalies de valorisation.
 
-### Go-Live (Mise en Prod)
-**Définition:** Date officiel de lancement/utilisation réelle du système par client.
+**Référence client**
+Projet similaire réalisé antérieurement, présenté pour attester de l'expérience du prestataire. Une référence idéale mentionne : le client (ou le secteur si confidentiel), le périmètre technique, le budget, la durée, les résultats mesurables.
 
-**Synonymes:** Production deployment, Launch date, Cutover
-
-**Critiques:** Souvent repousser par 2-4 semaines (tests découvrent issues)
+**Critère bloquant / éliminatoire**
+Condition dont la non-satisfaction entraîne l'élimination automatique du candidat, indépendamment du score sur les autres critères. Typiquement : certification obligatoire absente, budget inférieur au minimum viable, incompatibilité réglementaire.
 
 ---
 
-### Change Request (Changement)
-**Définition:** Demande modification scope/design après contrat signé.
+## C — Termes liés à l'organisation projet
 
-**Processus typique:**
-1. Client demande change
-2. ESN évalue impact (coût, délai)
-3. Client approuve + budget additionnel
-4. ESN exécute
+**SLA (Service Level Agreement)**
+Engagement contractuel de niveau de service. Exemples courants : disponibilité à 99,5 %, temps de réponse inférieur à 2 secondes, prise en charge des incidents de niveau 2 sous 4 heures. Le non-respect des SLA déclenche généralement des pénalités.
 
-**Impact:** Changement = €$ + temps additionnel
+**TMA (Tierce Maintenance Applicative)**
+Prestation de maintenance et d'évolution d'une application existante. Peut inclure : correction de bugs, petites évolutions fonctionnelles, supervision, support utilisateurs, mises à jour de sécurité.
 
----
+**MOE déléguée / AMO**
+Assistance à Maîtrise d'Ouvrage : rôle de conseil et d'accompagnement du client dans l'expression de son besoin, la rédaction du cahier des charges, le pilotage d'un appel d'offres ou la réception des livrables.
 
-## SECTION B: Termes Techniques & Architecture
+**Recette**
+Phase de validation des livrables par le client avant acceptation définitive. La recette peut être fonctionnelle (le client teste les fonctionnalités) ou technique (validation des performances, de la sécurité, de l'infrastructure).
 
-### Cloud
-**Définition:** Infrastructure informatique externalisée chez provider (AWS, Azure, GCP).
+**PV de recette (Procès-verbal de recette)**
+Document signé par le client attestant que les livrables sont conformes aux spécifications et acceptés. Sa signature conditionne généralement le déclenchement du paiement correspondant.
 
-**Avantages pour ESN response:**
-- Scalabilité
-- Maintenance réduite
-- Coûts prévisibles (pay-as-you-go)
+**Go-live / Mise en production**
+Date à laquelle la solution est déployée en environnement de production et accessible aux utilisateurs finaux.
 
-**Avantages pour Client:**
-- CAPEX → OPEX
-- Pas gérer infra physique
+**Clause de réversibilité**
+Clause contractuelle imposant au prestataire de fournir l'ensemble du code source, de la documentation technique et des scripts de déploiement en cas de fin de contrat, pour permettre au client de changer de prestataire sans dépendance.
 
 ---
 
-### RAG (Retrieval-Augmented Generation)
-**Définition:** Technique IA combinant recherche documentaire (retrieval) + génération texte LLM.
+## D — Termes techniques courants dans les AOs
 
-**Processus:**
-1. Utilisateur pose question
-2. RAG search corpus documents pertinents
-3. LLM reçoit question + documents comme contexte
-4. LLM génère réponse basée contexte
+**RAG (Retrieval-Augmented Generation)**
+Architecture d'intelligence artificielle combinant la recherche documentaire sémantique et la génération de texte par un modèle de langage (LLM). Le système recherche les documents les plus pertinents dans un corpus, puis les fournit comme contexte au LLM pour générer une réponse sourcée et vérifiable.
 
-**Importance croissante:** Utilisé pour customer support, documentation, RFP assistants
+**LLM (Large Language Model)**
+Modèle de langage de grande taille capable de générer, analyser et transformer du texte. Exemples : Claude (Anthropic), GPT-4 (OpenAI), Mistral. Utilisé dans les projets d'IA générative, d'assistance documentaire, d'extraction structurée et de génération de contenus.
 
-**Cf. notre projet:** Cas d'usage n°1 = plateforme IA RAG Mutuelle Nova
+**Base vectorielle**
+Base de données spécialisée dans le stockage et la recherche de représentations numériques (vecteurs) de textes. Permet la recherche sémantique : trouver des documents dont le sens est proche d'une requête, même si les mots exacts sont différents. Exemples : ChromaDB, Qdrant, PostgreSQL pgvector.
 
----
+**API REST**
+Interface permettant à deux systèmes informatiques de communiquer via des requêtes HTTP standardisées. Standard de facto pour l'intégration entre applications modernes.
 
-### API REST
-**Définition:** Interface logiciel permettant 2 systèmes communiquer (requête/réponse HTTP).
+**SSO (Single Sign-On)**
+Mécanisme d'authentification unique permettant à un utilisateur de se connecter une seule fois pour accéder à plusieurs applications. Protocoles courants : SAML 2.0, OpenID Connect, OAuth2.
 
-**Usage ESN:** Intégration modules projet, "glue" entre systèmes legacy
+**RBAC (Role-Based Access Control)**
+Contrôle d'accès basé sur les rôles : chaque utilisateur dispose d'un rôle (administrateur, gestionnaire, lecteur) qui détermine les fonctionnalités et les données auxquelles il peut accéder.
 
-**Client demande souvent:** "Votre solution expose une API REST?" = essayer intégrer avec leurs systèmes
+**CI/CD (Intégration et déploiement continus)**
+Pratique DevOps consistant à automatiser les étapes de compilation, test et déploiement d'une application à chaque modification du code. Réduit les risques de régression et accélère les cycles de livraison.
 
----
+**Docker / Kubernetes**
+Docker : technologie de conteneurisation permettant d'empaqueter une application et ses dépendances dans une image portable et reproductible. Kubernetes : orchestrateur de conteneurs gérant le déploiement, la mise à l'échelle et la haute disponibilité des applications conteneurisées.
 
-### Kubernetes
-**Définition:** Orchestrateur containers (gère scaling, deployment, monitoring).
+**PRA (Plan de Reprise d'Activité)**
+Plan définissant les procédures pour restaurer un système informatique après une panne ou un sinistre. Caractérisé par deux métriques : RPO (Recovery Point Objective — perte de données maximale tolérée) et RTO (Recovery Time Objective — durée maximale d'interruption tolérée).
 
-**Usage ESN:** Pour applications haute-dispo, auto-scaling, multi-cloud
-
-**Client demande si:** Infrastructure compliquée ou doit scaler beaucoup
-
----
-
-### Docker
-**Définition:** Containerization = packager app + dépendances dans image reproduisible.
-
-**Importance:** Standard industrie maintenant (deployment + reproducibilité)
-
-**Client demande:** Moins critiques que Kubernetes (plus simple)
+**MVP (Minimum Viable Product)**
+Version minimale d'un produit contenant uniquement les fonctionnalités essentielles pour valider le concept et livrer une première valeur aux utilisateurs. Approche recommandée pour réduire les risques et accélérer les retours terrain.
 
 ---
 
-### LLM (Large Language Model)
-**Définition:** Model IA type GPT, Claude, LLaMA capable générer texte cohérent.
+## E — Certifications et réglementations
 
-**Exemples:** OpenAI GPT-4, Anthropic Claude, Meta LLaMA
+**RGPD**
+Règlement Général sur la Protection des Données — réglementation européenne encadrant le traitement des données personnelles. Impose des obligations aux responsables de traitement et à leurs sous-traitants : minimisation des données, droits des personnes, registre des traitements, notification des violations.
 
-**Usage ESN:** Pour génération texte automatisée, analyse documents, chatbots
+**ISO 27001**
+Norme internationale définissant les exigences d'un système de management de la sécurité de l'information (SMSI). Sa certification atteste que l'entreprise applique un processus formel de gestion des risques de sécurité. NovaSoft Conseil n'est pas certifiée à ce jour (voir fiche dédiée).
 
-**Cf. notre projet:** Claude 3.5 utilisé pour extraction AO, scoring, generation candidature
+**SecNumCloud**
+Qualification délivrée par l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) aux fournisseurs de services cloud offrant un niveau de sécurité et de souveraineté adapté aux données sensibles de l'État. NovaSoft ne détient pas cette qualification (voir fiche dédiée).
 
----
+**HDS (Hébergeur de Données de Santé)**
+Certification française obligatoire pour tout prestataire hébergeant des données de santé à caractère personnel. NovaSoft n'est pas certifiée HDS.
 
-### Vector Database
-**Définition:** DB spécialisée stockant embeddings (représentations vectorielles texte/images).
+**Qualiopi**
+Certification française attestant de la qualité des processus mis en œuvre par les organismes de formation professionnelle. NovaSoft est certifiée Qualiopi (voir fiche dédiée).
 
-**Usage RAG:** Pour recherche sémantique (trouver documents "similaires" même mots différents)
-
-**Exemples:** Pinecone, Weaviate, PostgreSQL pgvector
-
----
-
-### Embeddings
-**Définition:** Représentation numérique (vecteur) d'un texte/mot capture signification sémantique.
-
-**Exemple:** "chat" proche de "félin", loin de "mathématiques"
-
-**Usage:** Recherche sémantique dans RAG
+**OIV (Opérateur d'Importance Vitale)**
+Entité publique ou privée dont les activités sont indispensables au fonctionnement de la nation (défense, énergie, transport, eau, santé, etc.). Les OIV sont soumis à des exigences de sécurité renforcées imposées par la LPM (Loi de Programmation Militaire). Les AOs émanant d'OIV comportent souvent des exigences SecNumCloud et ISO 27001 obligatoires.
 
 ---
 
-## SECTION C: Termes Réglementaires & Certifications
-
-### RGPD (Règlement Général Protection Données)
-**Définition:** Régulation UE protégeant données personnelles (nom, email, etc).
-
-**Obligations ESN:**
-- Consentement explicite avant traiter données
-- Droit d'accès/suppression pour utilisateurs
-- Breach notification <72h
-- Data Protection Officer (DPO)
-
-**Impact RFP:** Client demande RGPD compliance = nous devons prouver
-
----
-
-### SecNumCloud
-**Définition:** Label français pour certifier infrastructure cloud française sécurisée (vs. USA).
-
-**Importance France/Public:** Obligatoire pour gouvernement, certains secteurs (santé, défense)
-
-**Processus certification:** Audit annuel, très rigoureux (3-4 mois)
-
-**Impact RFP:** Si client France + données sensibles → probably demande SecNumCloud
-
----
-
-### HDS (Hébergeur Données Santé)
-**Définition:** Certification française pour fournisseurs hébergeant données santé (HIPAA français).
-
-**Obligation si:** Client = Hôpital, pharmacie, etc.
-
-**Spécificités:** Chiffrement mandatory, audit annuel, disaster recovery plan requis
-
----
-
-### ISO 27001
-**Définition:** Standard international pour Information Security Management System (ISMS).
-
-**Coverage:** Policies, risk management, incident response, etc.
-
-**Duration:** Audit annuel, certification 3 ans
-
-**Importance:** Demandé souvent par clients enterprise/secure
-
----
-
-### Qualiopi
-**Définition:** Certification française pour organisme formation professionnelle.
-
-**Rôle ESN:** Si nous offrons formation/upskilling dans notre solution
-
-**Process:** Audit externe, très document-heavy
-
----
-
-### SOC 2 (System and Organization Controls)
-**Définition:** Standard américain pour fournisseurs service (security, availability, processing integrity).
-
-**Importance:** Demandé par clients USA ou équivalent ISO 27001
-
----
-
-### Compliance
-**Définition:** Conformité = respecter lois/standards applicables.
-
-**Exemple:** "Solution doit être RGPD-compliant" = solution respecte RGPD
-
-**Impact ESN:** Assurez conformité = coût + délai additionnel
-
----
-
-## SECTION D: Termes Contractuels & Commerciaux
-
-### Budget Estimé
-**Définition:** Montant client anticipe pour projet.
-
-**Risques ESN:**
-- Trop bas = perte financière
-- Trop haut = client hésite (accept pas candidature)
-- Vague ("à discuter") = Scope creep risk
-
-**Notre job:** Analyser si budget = réaliste pour scope
-
----
-
-### Timeline / Durée Projet
-**Définition:** Durée estimée du projet (ex: 12 mois).
-
-**Importance:** Impacte team sizing, resource allocation
-
-**Risk:** Client donne délai trop court = qualité souffre
-
----
-
-### Deadline Réponse
-**Définition:** Date limite soumettre candidature à client.
-
-**Importance critique:** Manquer deadline = candidature rejetée automatique
-
-**Typ range:** J+14 à J+45 après publication AO
-
----
-
-### Penalty / Pénalité
-**Définition:** € perte si ESN ne respecte pas engagement (retard, bug, SLA manquée).
-
-**Exemple:** "Retard 1 jour = 1% budget penalty"
-
-**Importance:** Haut penalties = dissuade bad projects
-
----
-
-### Fixed-Price vs. Time & Materials
-**Définition:** 2 modèles facturation
-- **Fixed-Price:** Budget maximal défini à l'avance (client protégé, ESN risque)
-- **Time & Materials:** Facturer par heure travaillée (ESN protégé, client risque)
-
-**AO type:** Fixed-price (client contrôle budget)
-
-**Implication ESN:** Estimation très précise nécessaire
-
----
-
-### Non-Disclosure Agreement (NDA)
-**Définition:** Contrat liant ESN garder infos client confidentiel.
-
-**Typ duration:** 3-5 ans
-
-**Importance:** Client partage secrets → NDA obligatoire
-
----
-
-### Intellectual Property (IP)
-**Définition:** Propriété code/designs créés pour client.
-
-**Clarifications typ:**
-- Client propriétaire = client "owns" code créé
-- ESN retiens license = ESN peut réutiliser pour autres clients
-- Hybrid = Mix (client owns app, ESN owns components réutilisables)
-
-**Impact:** Enjeu legal/commercial important
-
----
-
-## SECTION E: Termes Processus & Méthodologie
-
-### Agile / Scrum
-**Définition:** Méthodologie itérative (sprints 2 semaines) vs. Waterfall (phases séquentielles).
-
-**Avantages Agile:**
-- Feedback rapide
-- Changes faciles
-- Client engagé
-
-**Client demande:** 80% AO modernes demandent Agile
-
----
-
-### Sprint
-**Définition:** Cycle développement Agile (typ 2 semaines).
-
-**Contenu:**
-- Planning (quel travail ce sprint)
-- Daily standups (15 min status)
-- Development
-- Review (demo client)
-- Retrospective (amélioration)
-
----
-
-### MVP (Minimum Viable Product)
-**Définition:** Version minimal du produit contenant features core seulement.
-
-**Usage:** Livrer rapido, tester avec vrai users, puis ajouter features
-
-**Client demande souvent:** "Pouvez-vous faire MVP d'abord?"
-
----
-
-### UAT (User Acceptance Testing)
-**Définition:** Client teste solution avant acceptance final (go-live).
-
-**Duration:** Typ 2-4 semaines
-
-**Importance:** Client rejette si UAT fails → project delayed
-
----
-
-### DevOps
-**Définition:** Culture + practices automatiser développement, test, deployment.
-
-**Includes:** CI/CD pipelines, infrastructure-as-code, monitoring
-
-**Client demande si:** Besoin déployer souvent (ex: SaaS)
-
----
-
-### KPI (Key Performance Indicator)
-**Définition:** Métrique business mesurant succès (ex: temps traitement, coût, satisfaction).
-
-**Usage:** Montrer solution ROI (client satisfied) vs. coût
-
----
-
-## SECTION F: Abréviations Courantes
-
-| Abrév | Signification | Usage |
-|-------|---------------|-------|
-| AO | Appel d'Offres | "Répondre à un AO" |
-| RFP | Request for Proposal | Anglophone = AO |
-| MOA | Maître d'Ouvrage | Client |
-| MOE | Maître d'Œuvre | Nous = fournisseur |
-| SLA | Service Level Agreement | Garanties |
-| API | Application Programming Interface | Intégration |
-| REST | Representational State Transfer | Type d'API |
-| RAG | Retrieval-Augmented Generation | IA + search |
-| LLM | Large Language Model | GPT, Claude, etc |
-| MVP | Minimum Viable Product | Version réduite |
-| UAT | User Acceptance Testing | Tests client |
-| KPI | Key Performance Indicator | Métriques |
-| CI/CD | Continuous Integration/Deployment | Deployment automation |
-| RGPD | Regulation Protection Données | Compliance données |
-| SaaS | Software as a Service | Cloud software |
-| IaaS | Infrastructure as a Service | Cloud infrastructure |
-| PaaS | Platform as a Service | Cloud platform |
-| JSON | JavaScript Object Notation | Format données |
-| SQL | Structured Query Language | Database query |
-| NoSQL | Non-relational SQL | Database type |
-| DBA | Database Administrator | DB specialist |
-| QA | Quality Assurance | Testing |
-| PoC | Proof of Concept | Prototype |
-| Pilot | Version test limité | Limited rollout |
-
----
-
-## SECTION G: Quick Reference - Quand Utiliser Chaque Terme
-
-### En répondant "Certification request":
-"Nous sommes **ISO 27001 certified** et **RGPD-compliant**. 
-Déploiement sur **infrastructure SecNumCloud-qualified**."
-
-### En répondant "Methodology":
-"Approche **Agile/Scrum** avec sprints 2-semaines. 
-**CI/CD pipelines** pour **continuous deployment**.
-**UAT client** à la fin pour acceptance."
-
-### En répondant "Architecture":
-"Architecture **REST API** avec **Docker containers**, 
-orchestrés via **Kubernetes** en production. 
-Données stockées **Vector DB** pour **RAG searches**."
-
-### En répondant "Risk mitigation":
-"Penalty clauses **capped à 10%** pour mutual protection. 
-**SLA 99.5%** realistic pour infrastructure. 
-**Change management process** défini pour scope clarity."
+## F — Abréviations de référence rapide
+
+| Sigle | Signification |
+|---|---|
+| AO | Appel d'offres |
+| MAPA | Marché à Procédure Adaptée |
+| MOA | Maître d'ouvrage (client) |
+| MOE | Maître d'œuvre (prestataire) |
+| CCTP | Cahier des Clauses Techniques Particulières |
+| CCAP | Cahier des Clauses Administratives Particulières |
+| TMA | Tierce Maintenance Applicative |
+| SLA | Service Level Agreement |
+| PRA | Plan de Reprise d'Activité |
+| RPO | Recovery Point Objective |
+| RTO | Recovery Time Objective |
+| RAG | Retrieval-Augmented Generation |
+| LLM | Large Language Model |
+| SSO | Single Sign-On |
+| RBAC | Role-Based Access Control |
+| MVP | Minimum Viable Product |
+| CI/CD | Intégration et déploiement continus |
+| OIV | Opérateur d'Importance Vitale |
+| LPM | Loi de Programmation Militaire |
+| ANSSI | Agence Nationale de la Sécurité des Systèmes d'Information |
+| RGPD | Règlement Général sur la Protection des Données |
+| DPA | Data Processing Agreement (accord de sous-traitance) |
+| AIPD | Analyse d'Impact relative à la Protection des Données |
+| HDS | Hébergeur de Données de Santé |
+| DC1/DC2 | Formulaires administratifs marchés publics |
+| DUME | Document Unique de Marché Européen |
+| BPD | Bordereau de Prix Détaillé |

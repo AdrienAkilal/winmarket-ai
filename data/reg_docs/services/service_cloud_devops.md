@@ -1,2 +1,0 @@
-# Service Cloud DevOps
-Expertise Azure, AWS, Docker, Kubernetes, GitLab CI, Terraform, supervision, observabilité et sécurisation des déploiements. Capacité à industrialiser une application en environnement cloud ou hybride.

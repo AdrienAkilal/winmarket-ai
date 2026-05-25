@@ -1,2 +1,0 @@
-# Service Développement Web
-Nous concevons des portails clients, extranets, intranets, plateformes SaaS et applications métier. Technologies maîtrisées : React, Angular, Vue, Java Spring Boot, .NET, Python FastAPI, PostgreSQL, SQL Server. Méthode agile, CI/CD et tests automatisés.
