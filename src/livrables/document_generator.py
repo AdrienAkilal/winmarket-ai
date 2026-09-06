@@ -7,7 +7,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, HRFlowable
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 from reportlab.lib.units import cm
-from src.core.config import OUTPUT_DIR
+from src.core.config import OUTPUT_DIR, LLM_TEMPERATURE_GENERATION
 from src.core.models import AOContext, ScoringResult
 
 
@@ -134,7 +134,7 @@ Réponds UNIQUEMENT en JSON valide. "valeur_ajoutee" est une liste de strings, l
 """
 
         try:
-            return llm.json_complete(prompt, system=self._DOC_SYSTEM, temperature=0.5, max_tokens=3000) or {}
+            return llm.json_complete(prompt, system=self._DOC_SYSTEM, temperature=LLM_TEMPERATURE_GENERATION, max_tokens=3000) or {}
         except Exception:
             return {}
 

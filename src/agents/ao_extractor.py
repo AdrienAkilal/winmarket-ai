@@ -2,6 +2,8 @@ import re
 from pathlib import Path
 from src.core.models import AOContext
 from src.agents.llm_client import ClaudeClient
+from src.core.content_preparation import wrap_untrusted_content
+from src.core.config import LLM_TEMPERATURE_FACTUAL
 
 
 def read_document(path: str) -> str:
@@ -20,7 +22,7 @@ def read_document(path: str) -> str:
 
 
 def _find_budget(text: str):
-    m = re.search(r"(\d{2,3}(?:[\s.]\d{3})+|\d{5,})\s*€", text)
+    m = re.search(r"(\d{1,3}(?:[\s.]\d{3})+|\d{5,})\s*€", text)
     if not m:
         return None
     return float(re.sub(r"[\s.]", "", m.group(1)))
@@ -44,6 +46,7 @@ def _extract_certifications(text: str) -> list:
     """
     certs_to_check = {
         "SecNumCloud": [
+            r"(?i)secnumcloud[^\n]{0,60}(?:requis|obligatoire|exig[eé])",
             r"(?i)secnumcloud\s+(?:est\s+)?(?:requis|obligatoire|exig[eé])",
             r"(?i)qualification\s+secnumcloud\s+(?:est\s+)?(?:requis|obligatoire)",
             r"(?i)certifi[eé]\s+secnumcloud",
@@ -56,16 +59,19 @@ def _extract_certifications(text: str) -> list:
         "HDS": [
             r"(?i)hds\s+(?:est\s+)?(?:requis|obligatoire|exig[eé])",
             r"(?i)herbergeur\s+de\s+donn[eé]es\s+de\s+sant[eé].*obligatoire",
+            r"(?i)h[eé]bergeur\s+de\s+donn[eé]es\s+de\s+sant[eé][^\n]{0,80}obligatoire",
         ],
         "ISO 27001": [
             r"(?i)iso\s*27001\s+(?:est\s+)?(?:requis|obligatoire|exig[eé]e?)",
             r"(?i)certif\w*\s+iso\s*27001\s+(?:est\s+)?(?:requis|obligatoire)",
+            r"(?i)iso\s*27001[^\n]{0,60}(?:requis|obligatoire|exig[eé])",
         ],
         "Qualiopi": [
             r"(?i)qualiopi\s+(?:est\s+)?(?:requis|obligatoire|exig[eé]e?)",
         ],
         "RGPD": [
             r"(?i)rgpd\s+(?:est\s+)?(?:requis|obligatoire|conformit[eé]\s+rgpd\s+obligatoire)",
+            r"(?i)rgpd[^\n]{0,60}(?:n[eé]cessaire|requis|obligatoire|exig[eé])",
         ],
     }
 
@@ -86,9 +92,11 @@ def _extract_certifications(text: str) -> list:
         for pat in patterns:
             m = re.search(pat, text)
             if m:
-                # Check for negation in a window of 150 chars before/after
-                start = max(0, m.start() - 150)
-                end = min(len(text), m.end() + 150)
+                # Negation applies to the matched requirement line only; a
+                # nearby optional certification must not cancel this one.
+                start = text.rfind("\n", 0, m.start()) + 1
+                line_end = text.find("\n", m.end())
+                end = len(text) if line_end < 0 else line_end
                 window = text[start:end]
                 is_negated = any(re.search(neg, window) for neg in neg_patterns)
                 if not is_negated:
@@ -159,8 +167,8 @@ class AOExtractor:
         self.llm = ClaudeClient()
 
     def extract(self, text: str) -> AOContext:
-        prompt = _EXTRACTION_USER.format(text=text[:25000])
-        data = self.llm.json_complete(prompt, system=_EXTRACTION_SYSTEM, temperature=0.1, max_tokens=8000)
+        prompt = _EXTRACTION_USER.format(text=wrap_untrusted_content(text[:25000]))
+        data = self.llm.json_complete(prompt, system=_EXTRACTION_SYSTEM, temperature=LLM_TEMPERATURE_FACTUAL, max_tokens=8000)
         if data:
             data["texte_source"] = text
 

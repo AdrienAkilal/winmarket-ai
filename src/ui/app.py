@@ -349,7 +349,15 @@ if nav == "Analyser un appel d'offres":
 
         if text and st.button("🚀 Lancer l'analyse", type="primary", use_container_width=True):
 
-            STEPS = ["Lecture document", "Lecture intelligente", "Recherche client", "Analyse sémantique", "Scoring enrichi", "Disponibilité équipe", "Génération documents"]
+            from src.core.content_security import ContentSecurityError
+            try:
+                pipeline.security.validate(text)
+                text = pipeline.preparer.prepare(text).text
+            except ContentSecurityError as exc:
+                st.error(exc.user_message)
+                st.stop()
+
+            STEPS = ["Sécurité et préparation", "Lecture intelligente", "Recherche client", "Analyse sémantique", "Scoring enrichi", "Disponibilité équipe", "Génération documents"]
             prog_placeholder = st.empty()
             status_placeholder = st.empty()
             bar_placeholder = st.empty()

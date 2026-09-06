@@ -6,8 +6,11 @@ __pycache__/
 *.py[cod]
 *.pyo
 .venv/
+.venv_broken_*/
 venv/
 env/
+.pytest_cache/
+.benchmarks/
 
 # Outputs générés
 data/outputs/
@@ -23,6 +26,9 @@ IMPROVEMENTS_v2.md
 
 # Logs opérationnels
 logs/
+streamlit_log.txt
+streamlit_error.txt
+.streamlit/
 
 # Historique des analyses (données métier)
 data/historique/

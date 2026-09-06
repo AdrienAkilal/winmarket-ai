@@ -27,14 +27,15 @@ load_dotenv(ROOT_DIR / ".env", override=True)
 # ============================================================================
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY", "")
+MISTRAL_MODEL = os.getenv("MISTRAL_MODEL", "mistral-small-latest")
 PAPPERS_API_TOKEN = os.getenv("PAPPERS_API_TOKEN", "")
 
 # ============================================================================
 # LLM CONFIGURATION
 # ============================================================================
-# Model selection
-LLM_MODEL_PRIMARY = os.getenv("LLM_MODEL_PRIMARY", "claude-3-5-sonnet-20241022")
-LLM_MODEL_FALLBACK = os.getenv("LLM_MODEL_FALLBACK", None)  # e.g., "claude-3-opus-20240229"
 LLM_ENABLED = os.getenv("LLM_ENABLED", "true").lower() == "true"
 
 # Timeouts
@@ -47,8 +48,13 @@ LLM_RETRY_BACKOFF = float(os.getenv("LLM_RETRY_BACKOFF", "2.0"))
 LLM_RETRY_INITIAL_DELAY = float(os.getenv("LLM_RETRY_INITIAL_DELAY", "1.0"))
 
 # Temperature & creativity
-LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.7"))
+LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.1"))
+LLM_TEMPERATURE_FACTUAL = float(os.getenv("LLM_TEMPERATURE_FACTUAL", "0.1"))
+LLM_TEMPERATURE_GENERATION = float(os.getenv("LLM_TEMPERATURE_GENERATION", "0.3"))
 LLM_TOP_P = float(os.getenv("LLM_TOP_P", "1.0"))
+LLM_PROVIDER_PRIORITY = [item.strip().lower() for item in os.getenv(
+    "LLM_PROVIDER_PRIORITY", "anthropic,openai,mistral"
+).split(",") if item.strip()]
 
 # ============================================================================
 # RAG CONFIGURATION
@@ -153,12 +159,13 @@ def get_config_dict() -> Dict[str, Any]:
             "logs": str(LOGS_DIR),
         },
         "llm": {
-            "model_primary": LLM_MODEL_PRIMARY,
-            "model_fallback": LLM_MODEL_FALLBACK,
             "enabled": LLM_ENABLED,
             "timeout_seconds": LLM_TIMEOUT_SECONDS,
             "max_tokens": LLM_MAX_TOKENS,
             "temperature": LLM_TEMPERATURE,
+            "temperature_factual": LLM_TEMPERATURE_FACTUAL,
+            "temperature_generation": LLM_TEMPERATURE_GENERATION,
+            "provider_priority": LLM_PROVIDER_PRIORITY,
             "max_retries": LLM_MAX_RETRIES,
         },
         "rag": {
@@ -191,8 +198,9 @@ def validate_config() -> None:
     """Validate critical configuration settings."""
     errors = []
     
-    if not ANTHROPIC_API_KEY and LLM_ENABLED:
-        errors.append("ANTHROPIC_API_KEY not set but LLM_ENABLED=true")
+    available_llm_keys = {"anthropic": ANTHROPIC_API_KEY, "openai": OPENAI_API_KEY, "mistral": MISTRAL_API_KEY}
+    if LLM_ENABLED and not any(available_llm_keys.get(p) for p in LLM_PROVIDER_PRIORITY):
+        errors.append("No API key configured for any provider in LLM_PROVIDER_PRIORITY")
     
     if not PAPPERS_API_TOKEN and PAPPERS_ENABLED:
         errors.append("PAPPERS_API_TOKEN not set but PAPPERS_ENABLED=true")

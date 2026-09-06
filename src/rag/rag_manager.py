@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import List, Tuple
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from src.core.config import REG_DIR
+from src.core.config import REG_DIR, LLM_TEMPERATURE_FACTUAL
 from src.core.models import RAGEvidence
 
 # French stop words for better TF-IDF results
@@ -112,7 +112,7 @@ Réponds UNIQUEMENT en JSON valide :
   "synthese": "Paragraphe de 4 à 6 phrases rédigé au présent, professionnel et valorisant. Citer les 2-3 meilleures références par leur nom exact. Expliquer en quoi elles démontrent notre capacité à répondre à CET appel : secteur maîtrisé, technologies identiques, complexité comparable. Préciser ce qu'elles apportent concrètement au dossier (réassurance sur la stack technique, démonstration sectorielle, preuve de capacité à livrer dans les délais). Conclure sur la cohérence globale de notre portfolio par rapport à l'AO."
 }}
 """
-        data = llm.json_complete(prompt, system=self._RAG_SYSTEM, temperature=0.3)
+        data = llm.json_complete(prompt, system=self._RAG_SYSTEM, temperature=LLM_TEMPERATURE_FACTUAL)
         if not data:
             return evidences, ""
 

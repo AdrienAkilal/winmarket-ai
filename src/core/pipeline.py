@@ -5,6 +5,8 @@ from src.rag.rag_manager import LocalRAGManager
 from src.agents.capacity_analyzer import CapacityAnalyzer
 from src.agents.scoring_engine import ScoringEngine
 from src.livrables.document_generator import DocumentGenerator
+from src.core.content_security import ContentSecurityGate
+from src.core.content_preparation import ContentPreparer
 
 class AOPipeline:
     def __init__(self):
@@ -15,8 +17,12 @@ class AOPipeline:
         self.capacity = CapacityAnalyzer()
         self.scoring = ScoringEngine()
         self.generator = DocumentGenerator()
+        self.security = ContentSecurityGate()
+        self.preparer = ContentPreparer()
 
     def run_text(self, text: str, generate_docs: bool = True):
+        self.security.validate(text)
+        text = self.preparer.prepare(text).text
         ao = self.extractor.extract(text)
         company = self.company.enrich(ao.client)
         query = " ".join([ao.titre, " ".join(ao.technologies_demandees), " ".join(ao.competences_requises), " ".join(ao.certifications_obligatoires)])

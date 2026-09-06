@@ -1,5 +1,5 @@
 from src.core.models import AOContext, CompanyProfile, RAGEvidence, CapacityResult, CriterionScore, ScoringResult
-from src.core.config import SCORING_THRESHOLD_GO, SCORING_THRESHOLD_SOUS_RESERVE
+from src.core.config import SCORING_THRESHOLD_GO, SCORING_THRESHOLD_SOUS_RESERVE, LLM_TEMPERATURE_FACTUAL
 from typing import Optional
 
 
@@ -309,7 +309,7 @@ Chaque justification doit :
 Réponds UNIQUEMENT en JSON valide, sans texte avant ni après.
 """
         try:
-            data = llm.json_complete(prompt, system=self._SCORING_SYSTEM, temperature=0.4, max_tokens=4000)
+            data = llm.json_complete(prompt, system=self._SCORING_SYSTEM, temperature=LLM_TEMPERATURE_FACTUAL, max_tokens=4000)
         except Exception:
             return result
         if not data:
