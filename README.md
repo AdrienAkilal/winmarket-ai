@@ -73,6 +73,21 @@ Le moteur de scoring et ses règles métier restent déterministes. La températ
 basse, le RAG et les validations réduisent la variabilité, mais ne constituent
 pas à eux seuls une garantie contre les hallucinations.
 
+## Disponibilité opérationnelle
+
+Avant une analyse, l'accueil affiche la charge globale, la disponibilité restante
+et le nombre de projets en cours. Le bouton « Modifier les disponibilités » permet
+de mettre à jour :
+
+- la charge globale de l'équipe ;
+- le nombre et le nom facultatif des projets en cours ;
+- la disponibilité de chaque pôle.
+
+L'enregistrement met à jour le fichier
+data/reg_docs/ressources/capacite_charge_planification.md, recharge immédiatement
+la base RAG et alimente CapacityAnalyzer. La prochaine analyse et son scoring
+capacitaire utilisent donc les nouvelles valeurs.
+
 ## Sécurité des contenus importés
 
 Tous les modes d'entrée empruntent la même couche de contrôle. Le document est
@@ -113,6 +128,7 @@ AO_SCORING_V2/
 │   │   ├── llm_providers.py       # Adaptateurs Anthropic/OpenAI/Mistral
 │   │   └── scoring_engine.py      # Moteur de scoring 12 critères
 │   ├── core/
+│   │   ├── capacity_repository.py # Lecture/écriture du plan de capacité RAG
 │   │   ├── config.py              # Chemins et variables d'environnement
 │   │   ├── content_security.py    # Modération des entrées non fiables
 │   │   ├── content_preparation.py # Nettoyage et structuration sans perte métier
@@ -123,7 +139,8 @@ AO_SCORING_V2/
 │   ├── livrables/
 │   │   └── document_generator.py  # Génération PDF + DOCX personnalisés
 │   └── ui/
-│       └── app.py                 # Interface Streamlit — WinMarket AI
+│       ├── app.py                 # Interface Streamlit — WinMarket AI
+│       └── capacity_editor.py     # Éditeur des disponibilités et projets
 ├── data/
 │   ├── reg_docs/                  # Base documentaire ESN (services, références, équipes)
 │   ├── ao_examples/               # Appels d'offres de démo
