@@ -1,0 +1,248 @@
+{% extends "app_shell.html" %}
+{% block title %}{{ ao.titre }} — Résultats — WinMarket AI{% endblock %}
+
+{% block app_content %}
+{% set dec = result.decision %}
+{% set dec_class = 'go' if dec == 'GO' else ('reserve' if 'RESERVE' in dec else 'nogo') %}
+{% set dec_label = 'GO' if dec == 'GO' else ('GO SOUS RÉSERVE' if 'RESERVE' in dec else 'NO-GO') %}
+{% set dec_icon = '✅' if dec == 'GO' else ('⚠️' if 'RESERVE' in dec else '❌') %}
+
+<div class="breadcrumb"><a href="/app/analyser">Nouvelle analyse</a> / Résultats</div>
+
+<div class="card result-header" style="margin-bottom:20px">
+  <div>
+    <div class="result-meta-label">Appel d'offres</div>
+    <div class="result-title">{{ ao.titre }}</div>
+    <div class="result-sub">
+      Client : {{ ao.client }} &nbsp;|&nbsp; Secteur : {{ ao.secteur or '–' }} &nbsp;|&nbsp;
+      Budget : {{ '{:,.0f} €'.format(ao.budget_estime).replace(',', ' ') if ao.budget_estime else 'Non renseigné' }}
+    </div>
+  </div>
+  <div class="result-score-block">
+    <span class="badge badge-{{ dec_class }}">{{ dec_icon }} {{ dec_label }}</span>
+    <div class="result-score" style="color:var(--{{ 'go' if dec_class=='go' else ('reserve' if dec_class=='reserve' else 'nogo') }})">
+      {{ '%.1f' % result.score_global }}<span>/100</span>
+    </div>
+    <div class="result-score-sub">Disponibilité équipe : {{ result.capacity.capacite_restante_pct if result.capacity else '–' }}%</div>
+  </div>
+</div>
+
+{% if result.criteres_bloquants %}
+{% for b in result.criteres_bloquants %}
+<div class="callout callout-danger">🚨 <strong>Critère bloquant :</strong> {{ b }}</div>
+{% endfor %}
+{% endif %}
+
+<div data-tabs style="margin-top:24px">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="scoring">📊 Évaluation détaillée</button>
+    <button class="tab-btn" data-tab="contexte">📋 Contexte</button>
+    <button class="tab-btn" data-tab="references">🔍 Références &amp; preuves</button>
+    <button class="tab-btn" data-tab="client">🏢 Profil client</button>
+    <button class="tab-btn" data-tab="livrables">📦 Livrables</button>
+    <button class="tab-btn" data-tab="similaires">📈 AO similaires</button>
+  </div>
+
+  <!-- SCORING -->
+  <div class="tab-panel active" data-tab-panel="scoring">
+    <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:24px;align-items:start">
+      <div class="card">
+        <div class="section-heading"><h3>Note par critère d'évaluation</h3></div>
+        {% for c in result.criteres %}
+        {% set fillcls = 'high' if c.score >= 75 else ('mid' if c.score >= 55 else 'low') %}
+        <div class="score-row">
+          <div class="score-head">
+            <span class="score-name">{{ c.nom }} <span class="score-weight">({{ c.poids | int }}%)</span></span>
+            <span class="score-value">{{ '%.0f' % c.score }}/100</span>
+          </div>
+          <div class="score-track"><div class="score-fill {{ fillcls }}" style="width:{{ c.score }}%"></div></div>
+          <div class="score-justification">{{ c.justification }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div>
+        {% if result.forces %}
+        <div class="card card-tight" style="margin-bottom:16px">
+          <div class="section-heading"><h3>Points forts</h3></div>
+          {% for f in result.forces %}<div style="color:var(--go);font-size:.85rem;padding:.25rem 0">▶ {{ f }}</div>{% endfor %}
+        </div>
+        {% endif %}
+        {% if result.faiblesses %}
+        <div class="card card-tight" style="margin-bottom:16px">
+          <div class="section-heading"><h3>Points de vigilance</h3></div>
+          {% for f in result.faiblesses %}<div style="color:var(--nogo);font-size:.85rem;padding:.25rem 0">▶ {{ f }}</div>{% endfor %}
+        </div>
+        {% endif %}
+        {% if result.recommandations %}
+        <div class="card card-tight" style="margin-bottom:16px">
+          <div class="section-heading"><h3>Recommandations</h3></div>
+          {% for r in result.recommandations %}<div class="callout callout-info">💡 {{ r }}</div>{% endfor %}
+        </div>
+        {% endif %}
+        {% if result.risques %}
+        <div class="card card-tight">
+          <div class="section-heading"><h3>Risques identifiés</h3></div>
+          {% for r in result.risques %}<div class="callout callout-warning">⚠️ {{ r }}</div>{% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEXTE -->
+  <div class="tab-panel" data-tab-panel="contexte">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div class="card">
+        <div class="section-heading"><h3>Informations générales</h3></div>
+        {% for label, val in [
+          ('Titre', ao.titre), ('Client', ao.client), ('Secteur', ao.secteur or '–'),
+          ('Budget estimé', ('{:,.0f} €'.format(ao.budget_estime).replace(',', ' ') if ao.budget_estime else 'Non renseigné')),
+          ('Durée projet', ((ao.duree_projet_mois ~ ' mois') if ao.duree_projet_mois else '–')),
+          ('Date limite de réponse', ao.deadline_reponse or '–')
+        ] %}
+        <div style="margin-bottom:12px"><span class="text-tertiary" style="font-size:.8rem">{{ label }}</span><br><span>{{ val }}</span></div>
+        {% endfor %}
+      </div>
+      <div class="card">
+        <div class="section-heading"><h3>Technologies &amp; compétences</h3></div>
+        {% set techs = (ao.technologies_demandees + ao.competences_requises) | unique | list %}
+        {% if techs %}
+        <div>{% for t in techs %}<span class="chip" style="margin:0 6px 6px 0;display:inline-flex">{{ t }}</span>{% endfor %}</div>
+        {% else %}<p class="text-tertiary">Aucune technologie identifiée</p>{% endif %}
+
+        <div class="section-heading" style="margin-top:20px"><h3>Certifications obligatoires</h3></div>
+        {% if ao.certifications_obligatoires %}
+          {% for cert in ao.certifications_obligatoires %}
+          {% set ok = cert.lower() in ['iso 27001','rgpd','qualiopi','iso27001'] %}
+          <div style="color:{{ 'var(--go)' if ok else 'var(--nogo)' }};font-size:.85rem;padding:.15rem 0">{{ '✓' if ok else '✗' }} {{ cert }}</div>
+          {% endfor %}
+        {% else %}<p class="text-tertiary">Aucune certification obligatoire détectée</p>{% endif %}
+      </div>
+    </div>
+
+    {% if ao.contraintes %}
+    <div class="card" style="margin-top:20px">
+      <div class="section-heading"><h3>Contraintes identifiées</h3></div>
+      {% for c in ao.contraintes %}<div class="callout callout-warning">⚡ {{ c }}</div>{% endfor %}
+    </div>
+    {% endif %}
+
+    {% if ao.livrables %}
+    <div class="card" style="margin-top:20px">
+      <div class="section-heading"><h3>Livrables demandés</h3></div>
+      {% for lv in ao.livrables %}<div style="padding:.2rem 0;font-size:.85rem">📎 {{ lv }}</div>{% endfor %}
+    </div>
+    {% endif %}
+
+    {% if ao.questions_client %}
+    <div class="card" style="margin-top:20px">
+      <div class="section-heading"><h3>Questions identifiées</h3></div>
+      {% for q in ao.questions_client[:10] %}<div class="text-secondary" style="font-size:.83rem;padding:.2rem 0"><span style="color:var(--primary-strong)">Q{{ loop.index }}</span> {{ q }}</div>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="tab-panel" data-tab-panel="references">
+    <div class="section-heading"><h3>{{ result.evidence_pack | length }} documents pertinents trouvés</h3></div>
+    {% if result.rag_synthesis %}
+    <div class="callout callout-success" style="margin-bottom:20px">
+      <div class="eyebrow" style="color:var(--go);margin-bottom:8px">🤖 Analyse IA des références</div>
+      {{ result.rag_synthesis }}
+    </div>
+    {% endif %}
+    {% if result.evidence_pack %}
+      {% for ev in result.evidence_pack[:8] %}
+      {% set pct = [((ev.score * 400) | int), 100] | min %}
+      {% set fillcls = 'high' if pct >= 60 else ('mid' if pct >= 30 else 'low') %}
+      <details class="card card-tight" style="margin-bottom:12px">
+        <summary style="cursor:pointer;font-weight:600">📄 {{ ev.source }} — pertinence : {{ pct }}%</summary>
+        <div class="score-track" style="margin:12px 0"><div class="score-fill {{ fillcls }}" style="width:{{ pct }}%"></div></div>
+        <p class="text-secondary" style="font-size:.85rem;white-space:pre-wrap">{{ ev.content[:1400] }}</p>
+      </details>
+      {% endfor %}
+    {% else %}<p class="text-tertiary">Aucune référence trouvée — vérifiez que les documents de la base sont bien chargés.</p>{% endif %}
+  </div>
+
+  <!-- CLIENT -->
+  <div class="tab-panel" data-tab-panel="client">
+    {% if result.company_profile %}
+    {% set cp = result.company_profile %}
+    <div class="card">
+      <div class="section-heading"><h3>Profil entreprise cliente</h3></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div>
+          {% for label, val in [('Raison sociale', cp.raison_sociale), ('SIRET', cp.siret or '–'), ('Effectif', cp.effectif), ('Chiffre d\'affaires', cp.ca)] %}
+          <div style="margin-bottom:12px"><span class="text-tertiary" style="font-size:.8rem">{{ label }}</span><br><span>{{ val }}</span></div>
+          {% endfor %}
+        </div>
+        <div>
+          {% for label, val in [('Ville', cp.ville), ('Secteur', cp.secteur), ('Ancienneté', cp.anciennete), ('Solidité financière', cp.solidite_financiere)] %}
+          <div style="margin-bottom:12px"><span class="text-tertiary" style="font-size:.8rem">{{ label }}</span><br><span>{{ val }}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="text-tertiary" style="font-size:.75rem;margin-top:8px">Source données : <span style="color:var(--primary-strong)">{{ cp.source }}</span></div>
+    </div>
+
+    {% if result.capacity %}
+    <div class="card" style="margin-top:20px">
+      <div class="section-heading"><h3>Disponibilité et capacité de l'équipe</h3></div>
+      <div class="kpi-grid">
+        <div class="kpi-tile"><div class="kpi-label">Charge actuelle</div><div class="kpi-value">{{ result.capacity.charge_actuelle_pct }}%</div></div>
+        <div class="kpi-tile go"><div class="kpi-label">Disponibilité restante</div><div class="kpi-value">{{ result.capacity.capacite_restante_pct }}%</div></div>
+        <div class="kpi-tile {{ '' if result.capacity.equipe_disponible else 'nogo' }}"><div class="kpi-label">Équipe disponible</div><div class="kpi-value" style="font-size:1.1rem">{{ '✅ Oui' if result.capacity.equipe_disponible else '❌ Non' }}</div></div>
+      </div>
+      <p class="text-tertiary" style="margin-top:14px;font-size:.85rem">{{ result.capacity.commentaire }}</p>
+    </div>
+    {% endif %}
+    {% else %}<p class="text-tertiary">Profil client indisponible.</p>{% endif %}
+  </div>
+
+  <!-- LIVRABLES -->
+  <div class="tab-panel" data-tab-panel="livrables">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div class="card deliverable-card">
+        <div class="deliverable-icon">📋</div>
+        <h3>Rapport de décision</h3>
+        <div class="deliverable-desc">PDF · Note globale · Points bloquants · Atouts et faiblesses</div>
+        {% if files.pdf %}<a class="btn btn-primary btn-block" href="/api/download/{{ job_id }}/pdf">⬇️ Télécharger le PDF</a>{% endif %}
+      </div>
+      <div class="card deliverable-card">
+        <div class="deliverable-icon">📝</div>
+        {% if dec == 'NO-GO' %}
+        <h3>Mémo de non-réponse</h3>
+        <div class="deliverable-desc">DOCX · Analyse des blocages · Risques · Conditions de reconsidération</div>
+        {% elif 'RESERVE' in dec %}
+        <h3>Dossier conditionnel</h3>
+        <div class="deliverable-desc">DOCX · Réserves et conditions · Plan d'action GO · Méthodologie</div>
+        {% else %}
+        <h3>Dossier de candidature</h3>
+        <div class="deliverable-desc">DOCX · Réponse complète · Références · Méthodologie</div>
+        {% endif %}
+        {% if files.docx %}<a class="btn btn-secondary btn-block" href="/api/download/{{ job_id }}/docx">⬇️ Télécharger le DOCX</a>{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- SIMILAIRES -->
+  <div class="tab-panel" data-tab-panel="similaires">
+    <div class="section-heading"><h3>Historique des appels d'offres analysés</h3></div>
+    {% if history_recent %}
+      {% for h in history_recent %}
+      {% set hcls = 'go' if h.decision == 'GO' else ('reserve' if 'RESERVE' in (h.decision or '') else 'nogo') %}
+      <div class="list-row">
+        <div>
+          <div class="list-row-title">{{ h.titre or '–' }}</div>
+          <div class="list-row-meta">{{ h.client or '–' }} · {{ h.date or '–' }} · {{ (h.techs or []) | join(', ') or '–' }}</div>
+        </div>
+        <div style="text-align:right">
+          <span class="badge badge-{{ hcls }}" style="font-size:.7rem;padding:.2rem .6rem">{{ h.decision }}</span>
+          <div class="font-mono text-tertiary" style="margin-top:6px">{{ h.score }}/100</div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}<p class="text-tertiary">Aucun appel d'offres dans l'historique pour le moment.</p>{% endif %}
+  </div>
+</div>
+{% endblock %}

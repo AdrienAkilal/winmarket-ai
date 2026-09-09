@@ -1,15 +1,36 @@
 # Capacité, charge et règles de planification
 
+<!-- CAPACITY_DATA_START -->
+{
+  "charge_globale_pct": 78,
+  "nombre_projets_en_cours": 0,
+  "projets_en_cours": [],
+  "capacites_par_pole": {
+    "Software Engineering": 22,
+    "Data & IA": 15,
+    "Cloud/DevOps": 12,
+    "QA": 25,
+    "Product Design": 30,
+    "Chefferie de projet": 18
+  },
+  "updated_at": "2026-09-08T12:29:27+02:00"
+}
+<!-- CAPACITY_DATA_END -->
+
 ## Charge globale
-La charge consolidée de NovaSoft Conseil est actuellement estimée à 78 %. Le seuil de confort opérationnel est fixé à 85 %. Au-delà de 90 %, l'entreprise accepte uniquement les projets à forte valeur stratégique ou les projets pouvant démarrer progressivement. Au-delà de 95 %, tout nouvel engagement significatif est considéré comme un risque majeur pour la qualité de livraison.
+La charge consolidée de NovaSoft Conseil est actuellement estimée à 78 %.
+Nombre de projets en cours : 0.
+
+## Projets en cours
+- Aucun projet détaillé.
 
 ## Capacité disponible par pôle
-Software Engineering : 22 % de capacité disponible à horizon 6 semaines.
-Data & IA : 15 % de capacité disponible, avec tension sur les profils RAG/LLM.
-Cloud/DevOps : 12 % disponible, principalement pour accompagnement ponctuel.
-QA : 25 % disponible.
-Product Design : 30 % disponible.
-Chefferie de projet : 18 % disponible.
+Software Engineering : 22 % de capacité disponible.
+Data & IA : 15 % de capacité disponible.
+Cloud/DevOps : 12 % de capacité disponible.
+QA : 25 % de capacité disponible.
+Product Design : 30 % de capacité disponible.
+Chefferie de projet : 18 % de capacité disponible.
 
 ## Délais réalistes par type de projet
 - Application web MVP simple : 10 à 14 semaines.

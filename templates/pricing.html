@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+{% block title %}Tarifs — WinMarket AI{% endblock %}
+{% block meta_description %}Découvrez les offres d'abonnement WinMarket AI : Starter, Business et Enterprise.{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="/static/css/landing.css?v={{ asset_version('css/landing.css') }}">
+<link rel="stylesheet" href="/static/css/pricing.css?v={{ asset_version('css/pricing.css') }}">
+{% endblock %}
+
+{% block body %}
+{% include "components/site_header.html" %}
+
+<main id="main-content">
+  <section class="section pricing-hero" style="padding-top: calc(var(--header-height) + var(--space-8))">
+    <div class="container">
+      <div class="section-intro">
+        <span class="eyebrow">Abonnements</span>
+        <h1>Des offres adaptées à votre organisation</h1>
+        <p>Choisissez la formule adaptée à vos besoins d'analyse et d'aide à la décision sur les appels d'offres.</p>
+      </div>
+
+      <div class="billing-toggle-wrap">
+        <div class="billing-toggle" role="group" aria-label="Fréquence de facturation">
+          <button class="billing-option active" data-billing="monthly" type="button">Mensuel</button>
+          <button class="billing-option" data-billing="annual" type="button">Annuel</button>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card">
+          <div>
+            <div class="pricing-plan-name">Starter</div>
+            <div class="pricing-plan-target">PME / utilisateur individuel</div>
+          </div>
+          <div class="pricing-price">
+            <span class="price-monthly">199 €<span class="pricing-period">/ mois</span></span>
+            <span class="price-annual" hidden>1 990 €<span class="pricing-period">/ an</span></span>
+          </div>
+
+          <div class="pricing-specs">
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Utilisateurs</span><span class="pricing-spec-value">1 utilisateur</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Stockage documentaire</span><span class="pricing-spec-value">10 Go</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Stockage historique</span><span class="pricing-spec-value">5 Go</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Analyses incluses</span><span class="pricing-spec-value">≈ 100 AO / mois</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Crédits d'analyse</span><span class="pricing-spec-value">15 M tokens / mois</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Taille indicative d'un AO</span><span class="pricing-spec-value">Jusqu'à ~50 pages</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Recharge de crédits</span><span class="pricing-spec-value">En option</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Scoring et recommandation</span><span class="pricing-spec-value">Inclus</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Rédaction des livrables</span><span class="pricing-spec-value">Décision et recommandation</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Accompagnement</span><span class="pricing-spec-value">Standard</span></div>
+          </div>
+
+          <div class="pricing-setup">
+            <span class="pricing-setup-label">Phase d'intégration</span>
+            <span class="pricing-setup-value">Pas de phase d'intégration facturée</span>
+          </div>
+          <a class="btn btn-secondary btn-block" href="/register">Commencer avec Starter</a>
+        </div>
+
+        <!-- Business -->
+        <div class="pricing-card featured">
+          <span class="pricing-badge">Recommandée</span>
+          <div>
+            <div class="pricing-plan-name">Business</div>
+            <div class="pricing-plan-target">Équipes et ETI</div>
+          </div>
+          <div class="pricing-price">
+            <span class="price-monthly">799 €<span class="pricing-period">/ mois</span></span>
+            <span class="price-annual" hidden>7 990 €<span class="pricing-period">/ an</span></span>
+          </div>
+
+          <div class="pricing-specs">
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Utilisateurs</span><span class="pricing-spec-value">Jusqu'à 5 utilisateurs</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Stockage documentaire</span><span class="pricing-spec-value">100 Go</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Stockage historique</span><span class="pricing-spec-value">50 Go</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Analyses incluses</span><span class="pricing-spec-value">≈ 500 AO / mois</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Crédits d'analyse</span><span class="pricing-spec-value">75 M tokens / mois</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Taille indicative d'un AO</span><span class="pricing-spec-value">Jusqu'à ~50 pages</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Recharge de crédits</span><span class="pricing-spec-value">En option</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Scoring et recommandation</span><span class="pricing-spec-value">Inclus</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Rédaction des livrables</span><span class="pricing-spec-value">Décision et recommandation</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Accompagnement</span><span class="pricing-spec-value">Prioritaire</span></div>
+          </div>
+
+          <div class="pricing-setup">
+            <span class="pricing-setup-label">Phase d'intégration</span>
+            <span class="pricing-setup-value">À partir de 5 000 €</span>
+          </div>
+          <a class="btn btn-primary btn-block" href="/contact?plan=Business">Contacter l'équipe</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card">
+          <div>
+            <div class="pricing-plan-name">Enterprise</div>
+            <div class="pricing-plan-target">Grands comptes</div>
+          </div>
+          <div class="pricing-price">
+            <span class="price-monthly">Sur devis</span>
+            <span class="price-annual" hidden>À partir de 15 000 €<span class="pricing-period">/ an</span></span>
+          </div>
+
+          <div class="pricing-specs">
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Utilisateurs</span><span class="pricing-spec-value">Sur mesure</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Stockage documentaire</span><span class="pricing-spec-value">Sur mesure</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Stockage historique</span><span class="pricing-spec-value">Sur mesure</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Analyses incluses</span><span class="pricing-spec-value">Volume sur mesure</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Crédits d'analyse</span><span class="pricing-spec-value">Volume sur mesure</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Taille indicative d'un AO</span><span class="pricing-spec-value">Selon les besoins</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Recharge de crédits</span><span class="pricing-spec-value">Selon contrat</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Scoring et recommandation</span><span class="pricing-spec-value">Inclus</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Rédaction des livrables</span><span class="pricing-spec-value">Décision et recommandation</span></div>
+            <div class="pricing-spec-row"><span class="pricing-spec-label">Accompagnement</span><span class="pricing-spec-value">Dédié</span></div>
+          </div>
+
+          <div class="pricing-setup">
+            <span class="pricing-setup-label">Phase d'intégration</span>
+            <span class="pricing-setup-value">À partir de 15 000 €</span>
+          </div>
+          <a class="btn btn-secondary btn-block" href="/contact?plan=Enterprise">Contacter l'équipe</a>
+        </div>
+      </div>
+
+      <p class="pricing-note">Les volumes d'analyses sont indicatifs. Ils sont estimés sur la base d'appels d'offres pouvant contenir jusqu'à environ 50 pages. La consommation réelle des crédits peut varier selon la taille et la complexité des documents analysés.</p>
+    </div>
+  </section>
+</main>
+
+{% include "components/site_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="/static/js/pricing.js?v={{ asset_version('js/pricing.js') }}"></script>
+{% endblock %}

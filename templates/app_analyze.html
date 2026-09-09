@@ -1,0 +1,148 @@
+{% extends "app_shell.html" %}
+{% block title %}Nouvelle analyse — WinMarket AI{% endblock %}
+
+{% block app_content %}
+<div class="page-title">Nouvelle analyse</div>
+<p class="page-subtitle">Importez un appel d'offres pour lancer l'extraction, le scoring et la génération des livrables.</p>
+
+<div style="margin-bottom:28px">
+  <div class="section-heading">
+    <h3>Disponibilité de l'équipe</h3>
+    <button class="btn btn-elevated" id="capacity-open" type="button">
+      <span class="btn-icon-chip">⚙️</span>
+      Modifier les disponibilités
+    </button>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-tile">
+      <div class="kpi-label">Charge équipe</div>
+      <div class="kpi-value" id="capacity-charge-value">–</div>
+    </div>
+    <div class="kpi-tile">
+      <div class="kpi-label">Disponibilité</div>
+      <div class="kpi-value" id="capacity-dispo-value">–</div>
+    </div>
+    <div class="kpi-tile">
+      <div class="kpi-label">Projets en cours</div>
+      <div class="kpi-value" id="capacity-projects-value">–</div>
+    </div>
+  </div>
+</div>
+
+<div id="analyze-form-panel">
+  <form id="analyze-form" class="card">
+    <div class="section-heading"><h3>Source de l'appel d'offres</h3></div>
+
+    <div class="option-grid source-modes" role="radiogroup" aria-label="Source de l'appel d'offres">
+      <label class="option-card" data-mode="stock">
+        <input type="radio" name="mode" value="stock" checked>
+        <span class="option-icon">📂</span>
+        <span class="option-label">Appels d'offres en stock</span>
+      </label>
+      <label class="option-card" data-mode="upload">
+        <input type="radio" name="mode" value="upload">
+        <span class="option-icon">📎</span>
+        <span class="option-label">Importer un fichier</span>
+      </label>
+      <label class="option-card" data-mode="paste">
+        <input type="radio" name="mode" value="paste">
+        <span class="option-icon">✍️</span>
+        <span class="option-label">Saisie texte libre</span>
+      </label>
+    </div>
+
+    <div id="panel-stock">
+      <div class="field">
+        <label for="example-select">Choisir un exemple</label>
+        <select class="select" id="example-select">
+          <option value="">— Sélectionner —</option>
+          {% for ex in examples %}
+          <option value="{{ ex.id }}">{{ ex.label }}</option>
+          {% endfor %}
+        </select>
+        {% if not examples %}
+        <p class="field-hint">Aucun exemple disponible dans data/ao_examples/.</p>
+        {% endif %}
+      </div>
+      <pre id="example-preview" class="card surface-2" style="white-space:pre-wrap;font-size:.8rem;max-height:280px;overflow:auto" hidden></pre>
+    </div>
+
+    <div id="panel-upload" hidden>
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Déposer votre appel d'offres">
+        <div class="dropzone-icon">📎</div>
+        <h3>Déposez votre appel d'offres</h3>
+        <p class="text-tertiary" style="margin-top:8px">Glissez vos documents ici ou sélectionnez-les depuis votre ordinateur.</p>
+        <div class="dropzone-formats">
+          <span class="chip">PDF</span><span class="chip">DOCX</span><span class="chip">TXT</span><span class="chip">MD</span>
+        </div>
+        <p class="text-secondary" id="file-name" style="margin-top:14px;font-weight:600" hidden></p>
+      </div>
+      <input type="file" id="file-input" accept=".pdf,.docx,.txt,.md" class="visually-hidden">
+    </div>
+
+    <div id="panel-paste" hidden>
+      <div class="field">
+        <label for="paste-textarea">Coller le contenu de l'appel d'offres</label>
+        <textarea class="textarea" id="paste-textarea" placeholder="Collez ici le texte brut de l'appel d'offres..."></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block" id="submit-analyze" disabled>Lancer l'analyse</button>
+  </form>
+</div>
+
+<div id="progress-panel" class="card progress-panel" hidden>
+  <div class="spinner"></div>
+  <div class="progress-message" id="progress-message">Initialisation...</div>
+  <div class="step-progress" id="progress-steps"></div>
+  <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-bar-fill" style="width:4%"></div></div>
+</div>
+
+<div id="analyze-error" class="card" hidden>
+  <div class="error-card">
+    <span>⚠️</span>
+    <div>
+      <strong>L'analyse n'a pas pu être finalisée.</strong>
+      <p id="analyze-error-message" style="margin-top:8px;font-size:.9rem"></p>
+    </div>
+  </div>
+  <button class="btn btn-secondary" id="analyze-retry" style="margin-top:16px">← Réessayer</button>
+</div>
+
+<div id="capacity-modal" class="modal-backdrop" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Disponibilités de l'équipe</h3>
+      <button class="modal-close" id="capacity-close" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="text-tertiary" style="margin-bottom:20px;font-size:.85rem">Ces valeurs seront utilisées dès la prochaine analyse et ajoutées à la base de connaissances.</p>
+      <form id="capacity-form">
+        <div class="field">
+          <label for="cap-charge">Charge globale actuelle</label>
+          <div class="range-row">
+            <input type="range" id="cap-charge" min="0" max="100" value="78">
+            <span class="range-value" id="cap-charge-out">78 %</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cap-projects-count">Nombre de projets en cours</label>
+          <input type="number" class="input" id="cap-projects-count" min="0" max="999" value="0">
+        </div>
+        <div class="field">
+          <label for="cap-projects-list">Noms des projets en cours (un par ligne)</label>
+          <textarea class="textarea" id="cap-projects-list" style="min-height:90px"></textarea>
+        </div>
+        <div class="section-heading"><h3>Disponibilité par pôle</h3></div>
+        <div id="capacity-poles"></div>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:12px">Enregistrer les disponibilités</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block app_extra_scripts %}
+<script>window.WM_STEPS = {{ steps | tojson }};</script>
+<script src="/static/js/analyze.js?v={{ asset_version('js/analyze.js') }}"></script>
+{% endblock %}

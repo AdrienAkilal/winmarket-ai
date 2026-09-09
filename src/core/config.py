@@ -69,6 +69,30 @@ RAG_EMBEDDING_MODEL = os.getenv("RAG_EMBEDDING_MODEL", "sentence-transformers/al
 RAG_USE_EMBEDDINGS = os.getenv("RAG_USE_EMBEDDINGS", "false").lower() == "true"
 
 # ============================================================================
+# SAAS V3 — DATABASE, SESSION, STORAGE, EMAIL
+# ============================================================================
+# The only coupling to a Postgres provider is this URL — works unchanged with
+# a local Postgres, Docker, Supabase, Neon or any Postgres-compatible host.
+DATABASE_URL = os.getenv("DATABASE_URL", "")
+
+SESSION_SECRET = os.getenv("SESSION_SECRET", "")
+SESSION_COOKIE_NAME = os.getenv("SESSION_COOKIE_NAME", "wm_session")
+SESSION_MAX_AGE_SECONDS = int(os.getenv("SESSION_MAX_AGE_SECONDS", str(30 * 24 * 3600)))  # 30 days
+
+APP_ENV = os.getenv("APP_ENV", "development")
+BASE_URL = os.getenv("BASE_URL", "http://localhost:8000")
+
+STORAGE_BACKEND = os.getenv("STORAGE_BACKEND", "local")  # local | object
+LOCAL_STORAGE_PATH = Path(os.getenv("LOCAL_STORAGE_PATH", str(DATA_DIR)))
+
+ADMIN_NOTIFICATION_EMAIL = os.getenv("ADMIN_NOTIFICATION_EMAIL", "")
+SMTP_HOST = os.getenv("SMTP_HOST", "")
+SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+SMTP_USERNAME = os.getenv("SMTP_USERNAME", "")
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")
+SMTP_FROM_EMAIL = os.getenv("SMTP_FROM_EMAIL", "")
+
+# ============================================================================
 # EXTERNAL API CONFIGURATION
 # ============================================================================
 PAPPERS_ENABLED = os.getenv("PAPPERS_ENABLED", "true").lower() == "true"

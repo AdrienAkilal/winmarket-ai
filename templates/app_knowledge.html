@@ -1,0 +1,52 @@
+{% extends "app_shell.html" %}
+{% block title %}Base de connaissances — WinMarket AI{% endblock %}
+
+{% block app_content %}
+<div id="knowledge-root">
+  <div class="page-title">Base de connaissances</div>
+  <p class="page-subtitle">Documents de référence utilisés pour la recherche sémantique (RAG).</p>
+
+  <div class="kpi-grid" style="margin-top:20px">
+    <div class="kpi-tile">
+      <div class="kpi-label">Documents disponibles</div>
+      <div class="kpi-value" id="knowledge-total-docs">{{ knowledge.total_documents }}</div>
+    </div>
+    <div class="kpi-tile">
+      <div class="kpi-label">Taille totale</div>
+      <div class="kpi-value" id="knowledge-total-kb">{{ knowledge.total_kb }} Ko</div>
+    </div>
+    <div class="kpi-tile">
+      <div class="kpi-label">Dernière mise à jour</div>
+      <div class="kpi-value" style="font-size:1rem">Au démarrage</div>
+    </div>
+  </div>
+
+  <button class="btn btn-secondary" id="knowledge-reload" style="margin-top:20px">🔄 Recharger la base de référence</button>
+
+  <div class="section-heading" style="margin-top:32px"><h3>Documents indexés</h3></div>
+  <div id="knowledge-groups">
+    {% for g in knowledge.groups %}
+    <details class="card card-tight" style="margin-bottom:12px">
+      <summary style="cursor:pointer;font-weight:600">📁 {{ g.folder }} ({{ g.documents | length }} documents)</summary>
+      <div style="margin-top:12px">
+        {% for d in g.documents %}
+        <div class="text-tertiary" style="font-size:.8rem;padding:.2rem 0">📄 {{ d.source }} <span>({{ '{:,}'.format(d.chars).replace(',', ' ') }} caractères)</span></div>
+        {% endfor %}
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+
+  <div class="card" style="margin-top:32px">
+    <div class="section-heading"><h3>Tester une recherche dans la base</h3></div>
+    <div class="field">
+      <input type="text" class="input" id="knowledge-search" placeholder="Ex : développement web, migration cloud, cybersécurité...">
+    </div>
+    <div id="knowledge-search-results"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block app_extra_scripts %}
+<script src="/static/js/knowledge.js?v={{ asset_version('js/knowledge.js') }}"></script>
+{% endblock %}

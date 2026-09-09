@@ -1,0 +1,19 @@
+# Optional local PostgreSQL for development — the app itself is not
+# containerized here (see README "Déploiement": FastAPI runs on
+# Render/Railway/equivalent, pointed at this or any Postgres via
+# DATABASE_URL). Start with: docker compose up -d postgres
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: winmarket
+      POSTGRES_PASSWORD: winmarket
+      POSTGRES_DB: winmarket
+    ports:
+      - "5432:5432"
+    volumes:
+      - winmarket_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  winmarket_postgres_data:

@@ -1,0 +1,45 @@
+{% extends "app_shell.html" %}
+{% block title %}Historique — WinMarket AI{% endblock %}
+
+{% block app_content %}
+<div id="history-root">
+  <div class="page-title">Historique</div>
+  <p class="page-subtitle">Tous les appels d'offres analysés avec WinMarket AI.</p>
+
+  {% if not history %}
+  <div class="card" style="margin-top:24px">
+    <p class="text-tertiary">Aucun appel d'offres dans l'historique. Analysez un premier appel d'offres depuis « Nouvelle analyse ».</p>
+  </div>
+  {% else %}
+  <div class="card" style="margin-top:20px">
+    <div class="filters-row">
+      <div class="field">
+        <label for="filter-decision">Décision</label>
+        <select class="select" id="filter-decision">
+          <option>Toutes</option>
+          <option>GO</option>
+          <option>GO SOUS RÉSERVE</option>
+          <option>NO-GO</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-score">Score minimum : <span id="filter-score-out">0</span></label>
+        <input type="range" id="filter-score" min="0" max="100" value="0">
+      </div>
+      <div class="field">
+        <label for="filter-search">Rechercher</label>
+        <input type="text" class="input" id="filter-search" placeholder="Titre, client, technologie...">
+      </div>
+      <a class="btn btn-secondary btn-sm" href="/api/history/export.csv">📥 Exporter en CSV</a>
+    </div>
+    <p class="text-tertiary" id="history-count" style="margin-bottom:16px"></p>
+    <div id="history-list"></div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block app_extra_scripts %}
+<script>window.WM_HISTORY = {{ history | tojson }};</script>
+<script src="/static/js/history.js?v={{ asset_version('js/history.js') }}"></script>
+{% endblock %}

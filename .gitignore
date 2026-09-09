@@ -26,9 +26,20 @@ IMPROVEMENTS_v2.md
 
 # Logs opérationnels
 logs/
+server_err.log
+server_out.log
 streamlit_log.txt
 streamlit_error.txt
 .streamlit/
 
 # Historique des analyses (données métier)
 data/historique/
+
+# Demandes de contact soumises via le formulaire
+data/contact/
+
+# V3 SaaS — bases de données locales/scratch et artefacts de test
+*.db
+*.sqlite3
+.pytest_tmp/
+.hypothesis/
